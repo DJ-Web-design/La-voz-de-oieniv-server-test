@@ -1,0 +1,42 @@
+{
+	"videos":[
+		{
+		  "title": "Ejemplo De Titulo",
+		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
+		  "thumb": "/assets/user.jpg",
+		  "link": "https://youtu.be/rgtpQDQtJYQ"
+		},
+		{
+		  "title": "Ejemplo De Titulo Numero 2",
+		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
+		  "thumb": "/assets/user.jpg",
+		  "link": "https://youtu.be/rgtpQDQtJYQ"
+		},
+		{
+		  "title": "Ejemplo De Titulo Otra Vez",
+		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
+		  "thumb": "/assets/user.jpg",
+		  "link": "https://youtu.be/rgtpQDQtJYQ"
+		}
+	],
+	"data":{
+		"ejemplo-de-titulo":{
+		  "title": "Ejemplo De Titulo",
+		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
+		  "thumb": "/assets/user.jpg",
+		  "link": "https://youtu.be/rgtpQDQtJYQ"
+		},
+		"ejemplo-de-titulo-numero-2":{
+		  "title": "Ejemplo De Titulo Numero 2",
+		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
+		  "thumb": "/assets/user.jpg",
+		  "link": "https://youtu.be/rgtpQDQtJYQ"
+		},
+		"ejemplo-de-titulo-otra-vez":{
+		  "title": "Ejemplo De Titulo Otra Vez",
+		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
+		  "thumb": "/assets/user.jpg",
+		  "link": "https://youtu.be/rgtpQDQtJYQ"
+		}
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"programas":[
+		{
+			"nombre":"Tropicalisima",
+			"locutor":"Bernardo Romero",
+			"inicio":"5P.M.",
+			"fin":"7P.M.",
+			"dias":"Sábados",
+			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"image":"assets/user.jpg"
+		},
+		{
+			"nombre":"Voz que clama en el desierto",
+			"locutor":"Elizama Patiño",
+			"inicio":"7P.M.",
+			"fin":"8P.M.",
+			"dias":"Miércoles",
+			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"image":"assets/user.jpg"
+		},		
+		{
+			"nombre":"La hora de la intersecion",
+			"locutor":"Agustin Sanchez y el equipo de oracion",
+			"inicio":"7P.M.",
+			"fin":"8P.M.",
+			"dias":"Martes",
+			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"image":"assets/user.jpg"
+		},		
+		{
+			"nombre":"Entrelazados",
+			"locutor":"Debonish y Marisol Ortega",
+			"inicio":"10A.M.",
+			"fin":"11A.M.",
+			"dias":"Sábados",
+			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"image":"assets/user.jpg"
+		},		
+		{
+			"nombre":"La Tribu",
+			"locutor":"Francisco Infante",
+			"inicio":"4P.M.",
+			"fin":"5P.M.",
+			"dias":"Sábados",
+			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"image":"assets/user.jpg"
+		},		
+		{
+			"nombre":"Venezuela Para Cristo",
+			"locutor":"Agustin Sanchez",
+			"inicio":"8A.M.",
+			"fin":"9A.M.",
+			"dias":"Sábados",
+			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"image":"assets/user.jpg"
+		}
+	]
+}

@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /google64c5674981e7ac35.html
+Disallow: /terms.html
+Disallow: /policy.html
+Disallow: /admin
+
+Sitemap: https://www.lavozdeoieniv.tk/sitemap.xml
