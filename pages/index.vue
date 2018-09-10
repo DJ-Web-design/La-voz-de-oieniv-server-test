@@ -6,6 +6,7 @@
       <ShareButtonTwitter href="https://twitter.com/intent/user?screen_name=@lavozdeoieniv" follow/>
     </div>
     <MainArticle/>
+    <MainReference/>
     <MainVotoPanel :votos="votos"/>
     <MainSonadoPanel/>
     <MainSocialMedia/>
@@ -20,19 +21,17 @@
     />
   </div>
 </template>
-
 <script>
 import ShareButtonFacebook from "~/components/Widgets/ShareButtonFacebook"
 import ShareButtonTwitter from "~/components/Widgets/ShareButtonTwitter"
-
 import MainSlider from "~/components/Main/MainSlider"
 import MainArticle from "~/components/Main/MainArticle"
 import MainVotoPanel from "~/components/Main/MainVotoPanel"
 import MainSonadoPanel from "~/components/Main/MainSonadoPanel"
 import MainSocialMedia from "~/components/Main/MainSocialMedia"
-import MainSocialButtons from "~/components/Main/MainSocialButtons";
+import MainSocialButtons from "~/components/Main/MainSocialButtons"
 import MainModal from "@/components/Main/MainModal"
-
+import MainReference from "@/components/Main/MainReference"
 import {sliderDatabase, votesDatabase} from "@/plugins/firebase"
 
 export default {
@@ -41,6 +40,7 @@ export default {
     ShareButtonTwitter,
     MainSlider,
     MainModal,
+    MainReference,
     MainSocialButtons,
     MainSocialMedia,
     MainSonadoPanel,
