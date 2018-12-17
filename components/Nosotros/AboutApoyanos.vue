@@ -7,12 +7,12 @@
 		<h3>Con Ofrendas</h3>
 		<p>La Voz de OIENIV es una radio sin fines de lucro, Nuestra misón es llevar la Palabra de Dios cada día a mas personas, Nosotros no le cobramos nada a nadie por escuchar nuestra emisora, pero si esta en su corazón el deseo de apoyarnos, se lo agradeceriamos mucho.<br><button class="button" @click="showModal = true">Donar</button></p>
 		<h3>Forma Parte</h3>
-		<p>¿Tu tambien tienes ese deseo ferviente de llevar la palabra de Dios a cada persona que no conoce de sus caminos?, si eres de Venezuela o incluso mejor del estado Carabobo, puedes acudir a nuestros estudios hubicados en, Valencia, Parroquia Rafael Urdaneta, Barrio Bello Monte 2, calle Junín #77-40. Si no eres de Venezuela, entra en <nuxt-link to="/equipo">www.lavozdeoieniv.tk/equipo.</nuxt-link> y mira como puedes ayudarnos.</p>
+		<p>¿Tu tambien tienes ese deseo ferviente de llevar la palabra de Dios a cada persona que no conoce de sus caminos?, si eres de Venezuela o incluso mejor del estado Carabobo, puedes acudir a nuestros estudios hubicados en, Valencia, Parroquia Rafael Urdaneta, Barrio Bello Monte 2, calle Junín #77-40.<!--Si no eres de Venezuela, entra en <nuxt-link to="/equipo">www.lavozdeoieniv.tk/equipo.</nuxt-link> y mira como puedes ayudarnos.--></p>
 	</div>
 </template>
 <script>
     export default {
-        data: function(){
+        data(){
             return this.$parent._data
         }
     }

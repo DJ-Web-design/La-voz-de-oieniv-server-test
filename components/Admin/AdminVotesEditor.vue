@@ -25,7 +25,7 @@
 			return{
 				artist:"",
 				song:"",
-				voteId:1,
+				voteId:"1",
 				file:undefined,
 			}
 		},
@@ -44,38 +44,43 @@
 			},
 			async submit(e){
 				e.preventDefault();
-				var data = new FormData();
-				data.append("url", this.file[0]);
-				const config = {
-				    headers: {
-				        'content-type': 'multipart/form-data'
-				    }
-				}
-				let imageFetch = await post("https://lavozdeoieniv.herokuapp.com/thumbCreate", data, config)
-				let	imageData = imageFetch.data;
+				if (confirm("¿Esta seguro de su eleccion?.\nRevise que todos los datos esten correctos.")) {
+					var reader = new FileReader();
 
-				let voteId;
-				switch(this.voteId){
-					case 1:
-						voteId = "uno"
-						break;
-					case 2:
-						voteId = "dos"
-						break;
-					case 3:
-						voteId = "tres"
-						break;
-					default:
-						voteId = "uno"
-						break;
+					reader.readAsDataURL(this.file[0]);
+
+					let	image
+
+					reader.onload = ({target}) => {
+						image = target.result;
+					}
+
+					let voteId;
+					switch(this.voteId){
+						case "1":
+							voteId = "uno"
+							break;
+						case "2":
+							voteId = "dos"
+							break;
+						case "3":
+							voteId = "tres"
+							break;
+						default:
+							voteId = "uno"
+							break;
+					}
+					data = {
+						artista:this.artist,
+						cancion:this.song,
+						voto:`${this.song} de ${this.artist}`,
+						image,
+						votesCount:0
+					}
+					await votesDatabase.child(voteId).set(data);
+					
+					alert("El voto ha sito cambiado");
 				}
-				data = {
-					artista:this.artist,
-					cancion:this.song,
-					voto:`${this.song} de ${this.artist}`,
-					image:imageData
-				}
-				votesDatabase.child(voteId).set(data).then(()=>alert("Cambiado El Voto"))
 			}
 		}
 	}

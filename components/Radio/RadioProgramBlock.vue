@@ -52,13 +52,13 @@
             type:Number
         }
     },
-    data: function () {
+    data() {
         return {
             number:null, 
             vista:false
         }
     },
-    mounted:function(){
+    mounted(){
         this.windowWidth = document.body.clientWidth;
     },
     methods:{

@@ -12,7 +12,7 @@
 						<div class="content-left" :class="sliderNo === index? 'fade-left-enter': 'fade-left-leave'">
 							<h2 class="titleSlider">{{iten.title}}</h2>
 							<p>{{iten.description}}</p>
-							<button id="button" @click="goTo(iten.buttonLink)" v-if="iten.buttonText">
+							<button v-if="iten.buttonText !== 'no-button'" id="button" @click="goTo(iten.buttonLink)">
 								{{iten.buttonText}}
 							</button>
 							<span>{{iten.span}}</span>
@@ -49,7 +49,7 @@
 		props:{
 			slider:{ 
 				type:Array,
-				default:()=>{
+				default(){
 					return [
     					{
     					  title:'La Voz de OIENIV', 
@@ -64,7 +64,7 @@
 			},
 			sliderData:{
 				type:String,
-				default:()=>{
+				default(){
 					return "slider"
 				}
 			}
@@ -86,10 +86,10 @@
 			clearInterval(this.interval);
 		},
 		methods:{
-			clear:function(){
+			clear(){
 				clearInterval(this.interval)
 			},
-			goTo: function(link){
+			goTo(link){
 				console.log(link)
 				this.$router.push({path:link})
 			}

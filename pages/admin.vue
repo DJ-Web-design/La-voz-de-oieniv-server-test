@@ -49,7 +49,7 @@
         },
 		data(){ 
 			return {
-    		    bloqueo: false,
+    		    bloqueo: true,
     		    page: 1,
     		}
 		},

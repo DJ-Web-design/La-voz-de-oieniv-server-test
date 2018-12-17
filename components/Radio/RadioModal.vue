@@ -52,7 +52,7 @@
 </template>
 <script>
 	export default {
-		data: function(){
+		data(){
 			return this.$parent._data
 		},
         head(){
@@ -63,13 +63,14 @@
             }
         },
 		methods:{
-			ingresaNombre: function() {
-                this.chat.pic = "http://placehold.it/50/55C1E7/fff&text=U"
+			ingresaNombre() {
+                this.chat.pic = "http://placehold.it/50/55C1E7/fff&text=U";
                 if (this.chat.user) {
                     this.show = false;
                     this.showModal = false;
                     localStorage.setItem("Nombre", this.chat.user);
-                    localStorage.setItem("pic", this.chat.pic)
+                    localStorage.setItem("pic", this.chat.pic);
+                    FB.AppEvent.logEvent("Name Login");
                 }
             },
 		},

@@ -31,10 +31,10 @@
     </div>
 </template>
 <script>
-    import axios from "axios";
+    import {get} from "axios";
 
     export default {
-        data:function() {
+        data() {
             return {
                 inputUser:"",
                 inputPass:"",
@@ -44,7 +44,7 @@
             }
         },
         methods:{
-            adminAuth:function(e) {
+            async adminAuth(e) {
                 e.preventDefault();
                 var that = this;
                 that.noUser = ""
@@ -54,8 +54,8 @@
                 };
                 if (datos.user && datos.pass) {
                     that.dataIsSend = true;
-                    axios.get(`htps://lavozdeoieniv.herokuapp.com/login-admin?user=${datos.user}&pass=${datos.pass}`)
-                    .then(res => {
+                    try {
+                        let res = await get(`https://lavozdeoieniv.herokuapp.com/login-admin?user=${datos.user}&pass=${datos.pass}`);
                         if (res.data == "no-auth") {
                             that.noUser = "Usuario o contraseña incorrectos"
                         } else if (res.data == "auth") {
@@ -67,11 +67,11 @@
                             }
                         }
                         that.dataIsSend = false;
-                    }).catch( error => {
+                    } catch(error) {
                         alert("Error al conectar con el servidor.\nIntentelo de nuevo.");
                         that.noUser = "";
                         that.dataIsSend = false;
-                    })
+                    }
                 } else {
                     alert("Por favor ingrese Usuario y Contraseña");
                 }

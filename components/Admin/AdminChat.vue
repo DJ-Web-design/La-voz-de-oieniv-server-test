@@ -58,21 +58,19 @@
 			chatDatabase.on('value', snapshot => {
         	    this.chatMessages = []
         	    snapshot.forEach(e => {
-        	        this.chatMessages.push({value:e.val(), key:e.key})
-        	        return
+        	        this.chatMessages.push({value:e.val(), key:e.key});
         	    });
-        	    return
         	});
 		},
 		methods:{
 			borrarRegistros(key) {
 		        if (confirm("¿Seguro que deseas borrar esos registros?")) {
-		            chatDatabase.child(key).remove()
+		            chatDatabase.child(key).remove();
 		        }
 		    },
 		    borrarTodoChat(){
-		        firebase.database().ref().child("chat").remove()
-		    },
+		        firebase.database().ref().child("chat").remove();
+		    }
 		}
 	}
 </script>

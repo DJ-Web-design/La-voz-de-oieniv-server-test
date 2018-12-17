@@ -14,19 +14,19 @@
 		    <template v-if="spin">
 		        <img src="@/assets/spinner.svg" alt="" class="spinner" />
 		    </template>
-		    <span v-else>{{ voto1 }}</span>
+		    <span v-else>{{ votos.uno }}</span>
 		</div>
 		<div class="cuenta-voto">
 		    <template v-if="spin">
 		        <img src="@/assets/spinner.svg" alt="" class="spinner" />
 		    </template>
-		    <span v-else>{{ voto2 }}</span>
+		    <span v-else>{{ votos.dos }}</span>
 		</div>
 		<div class="cuenta-voto">
 		    <template v-if="spin">
 		        <img src="@/assets/spinner.svg" alt="" class="spinner" />
 		    </template>
-		    <span v-else>{{ voto3 }}</span>
+		    <span v-else>{{ votos.tres }}</span>
 		</div>
         <VotesEditor/>
 	</div>
@@ -42,64 +42,32 @@
 			return {
 				spin: false,
                 titleVotes:[],
-                votos:[],
+                votos:{
+                    uno:0,
+                    dos:0,
+                    tres:0
+                },
                 votouno:"",
                 votodos:"",
                 vototres:"",
 			}
 		},
-        mounted(){
-            votesDatabase.once("value", snap=>{
-                this.votouno = snap.val().uno.voto
-                this.votodos = snap.val().dos.voto
-                this.vototres = snap.val().tres.voto
-            }).then(()=>{
-                votesDatabase.child("vote").on("value",snap=>{
-                    this.votos = [];
-                    snap.forEach(e=>{
-                        if (
-                            e.val() == this.votouno ||
-                            e.val() == this.votodos ||
-                            e.val() == this.vototres
-                        ) {
-                            this.votos.push(e.val())
-                        }
-                        return
-                    })
-                    return
-                })
-            })
-        },
-        computed:{
-            voto1(){
-                let count = 0
-                this.votos.map((item)=>{
-                    if (item === this.votouno) {
-                        count++
-                    }
-                })
-                return count
-            },
-            voto2(){
-                let count = 0
-                this.votos.map((item)=>{
-                    if (item === this.votodos) {
-                        count++
-                    }
-                })
-                return count
-            },
-            voto3(){
-                let count = 0
-                this.votos.map((item)=>{
-                    if (item === this.vototres) {
-                        count++
-                    }
-                })
-                return count
+        async mounted(){
+            try {
+                await votesDatabase.once("value", snap=>{
+                    this.votouno = snap.val().uno.voto
+                    this.votodos = snap.val().dos.voto
+                    this.vototres = snap.val().tres.voto
+                });
+                votesDatabase.on("child_changed", snap=>{
+                    this.votos.uno = snap.val().uno.votesCount;
+                    this.votos.dos = snap.val().dos.votesCount;
+                    this.votos.tres = snap.val().tres.votesCount;
+                });
+            } catch(err=>{
+                alert("Error al obtener los datos. \nPor favor recargue la pagina.")
             }
         }
-
 	}
 </script>
 <style scoped>

@@ -2,19 +2,19 @@
   <div>
     <VideosHeader/>
       <template v-if="videos.length > 0">
-        <span>Galeria &gt; <nuxt-link to="/Galeria/videos/">Videos</nuxt-link><template v-if="$route.params.youtube"> &gt; {{setTitle}}</template></span>
+        <span>Galeria &gt; <nuxt-link to="/Galeria/videos/">Videos</nuxt-link><template v-if="$route.hash"> &gt; {{setTitle}}</template></span>
         <aside id="enlaces">
           <ul>
             <li v-for="(iten, index) in videos" :key="'videoLi '+index">
               <nuxt-link
-                :to="'/Galeria/videos/'+setLink(iten.title)"
+                :to="'/Galeria/videos#'+iten.id"
                 :key="'iten.title '+index">
                 {{ iten.title }}
               </nuxt-link>
             </li>
           </ul>
         </aside>
-        <template v-if="!$route.params.youtube">
+        <template v-if="!$route.hash">
           <div id="video-list">
             <transition-group name="fade">
               <VideosLink v-for="(iten, value) in videos"
@@ -33,7 +33,7 @@
           </div>
         </template>
         <template v-else>
-          <nuxt/>
+          <VideosView :data="bindedData"/>
         </template>
       </template>
       <template v-else>
@@ -46,29 +46,53 @@
 import VideosHeader from "@/components/GaleryVideo/VideosHeader"
 import VideosLink from "@/components/GaleryVideo/VideosLink"
 import VideosMissing from "@/components/GaleryVideo/VideosMissing"
+import VideosView from "@/components/GaleryVideo/VideosView"
+
+import {videoDatabase} from "@/plugins/firebase"
+
 import videos from "@/assets/json/videos.json"
+
 export default {
   components: {
+    VideosView,
     VideosHeader,
     VideosLink,
     VideosMissing
   },
-  data(){
-    return { 
-      videos:videos.videos, 
-      path:"",
-      params:undefined,
-      vistos:10,
-      showSeeMoreButton: true
-    }
-  },
   created(){
+
+    if (this.$route.hash) {
+      this.bindedData = this.videos.filter(e=>{
+        if (e.id === this.$route.hash.slice(1)) return e;
+      })[0]
+    }
     if (this.videos.length <= 10) {
       this.showSeeMoreButton = false;
     }
   },
+  mounted(){
+    let videos = this.videos;
+    videoDatabase.once("value", e=>{
+      videos = [];
+      e.forEach(snap=>{
+        videos.push(snap.val());
+      })
+    })
+  },
   updated(){
-    this.params = this.$route.params.youtube
+    if (this.$route.hash) {
+      this.bindedData = this.videos.filter(e=>{
+        if (e.id === this.$route.hash.slice(1)) return e;
+      })[0]
+    }
+  },
+  data(){
+    return { 
+      videos:[],
+      vistos:10,
+      showSeeMoreButton: true,
+      bindedData:{}
+    }
   },
   watch:{
     params(e){
@@ -94,17 +118,14 @@ export default {
   computed:{
     setTitle(){
       var title;
-      if (this.$route.params.youtube) {
-        title = this.$route.params.youtube;
+      if (this.$route.hash) {
+        title = this.videos.filter(e=>{
+          if (e.id === this.$route.hash.slice(1)) return e;
+        })[0].title;
       } else {
         title = "";
       }
-      let split = title.split("-");
-      let newTitle = [];
-      split.forEach(e=>{
-        newTitle.push(e.charAt(0).toUpperCase() + e.slice(1));
-      })
-      return newTitle.join(" ")
+      return title;
     },
   },
   head () {
@@ -332,6 +353,9 @@ hgroup {
 }
 
 @media screen and (min-width: 950px) {
+  #enlaces {
+    display:block;
+  }
   #vista {
     margin-top: 10px;
     position: relative;

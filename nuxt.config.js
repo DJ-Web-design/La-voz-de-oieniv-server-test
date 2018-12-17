@@ -18,7 +18,7 @@ module.exports = {
       {name:"twitter:site", content:"@lavozdeoieniv"},
     ],
     script:[
-      {src:"/js/fb-button.js"},
+      {src:"/js/fb-button.js"}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

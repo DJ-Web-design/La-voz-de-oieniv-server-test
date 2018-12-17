@@ -22,13 +22,6 @@
 </template>
 <script>
 	export default {
-		head(){
-			return {
-				script:[
-					{ src:"./js/paypal-button.js" }
-				]
-			}
-		},
 		methods:{
 			closeModal(){
 				this.$parent._data.showModal = false;

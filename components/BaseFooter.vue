@@ -11,9 +11,9 @@
 				<li>
 					<nuxt-link to="/about">Contactanos</nuxt-link>
 				</li>
-				<li>
+				<!--<li>
 					<nuxt-link to="/equipo">Apoyanos</nuxt-link>
-				</li>
+				</li>-->
 				<li>
 					<nuxt-link to="/">Vota</nuxt-link>
 				</li>

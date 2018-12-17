@@ -56,7 +56,6 @@
 			},
 			vote:{
 				type:String,
-				required:true,
 				default:"Una Cancion"
 			}
 		}
@@ -110,10 +109,14 @@
 	}
 
 	/*Clases*/
+	.icon-checkmark,
 	.icon-cross {
-		color: red;		
+		color: #dbe1ec;
+		font-size: 50px;
+		display: block;
+		margin: 80px auto;
 	}
-	.icon-checkmark {
-		color: green;
+	svg {
+		margin: 80px;
 	}
 </style>

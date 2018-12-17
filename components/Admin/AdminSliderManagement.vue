@@ -5,7 +5,7 @@
 		<label>Descripción</label>
 		<input type="text" placeholder="Descripcion" v-model="description">
 		<label>Texto de Invitacion</label>
-		<input type="text" placeholder="Texto de invitacion" v-model="invitation">
+		<textarea type="text" placeholder="Texto de invitacion" v-model="invitation"></textarea>
 		<label>Texto del Boton</label>
 		<select v-model="buttonText">
 			<option selected value="no-button">Sin Boton</option>
@@ -33,7 +33,7 @@
 			}
 		},
 		methods:{
-			submit(){
+			async submit(){
 				let data = {
       				title:this.title, 
       				description:this.description, 
@@ -42,14 +42,20 @@
     			  	span:this.invitation,
     			  	img:'/assets/images/logo.png',
     			}
-				sliderDatabase.push(data).then(()=>alert("Añadida Entrada del Slider"))
+    			try {
+					await sliderDatabase.push(data)
+					alert("Añadida Entrada del Slider")
+				} catch(err) {
+					console.log(err);
+				}
 			}
 		}
 	}
 </script>
 <style scoped>
 	label, 
-	input, 
+	input,
+	textarea,
 	button, 
 	select{
 		display:block;

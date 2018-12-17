@@ -1,32 +1,48 @@
 <template>
 	<div class="vota">
+        <a name="vota"></a>
         <h2>Vota por tu Favorita</h2>
         <form>
-            <input v-model="checked" class="radio" type="radio" name="vota" id="1" :value="votos.uno.voto" checked>
+            <input v-if="!votesLoad" v-model="checked" class="radio" type="radio" name="vota" id="1" value="uno" checked>
             <label class="label1" for="1">
                 <article class="vota1">
+                  <template v-if="!votesLoad">
                     <img :src="votos.uno.image" alt="votos.uno.voto">
                     <p class="padding-top">Artista: {{votos.uno.artista}}</p>
                     <p>{{votos.uno.cancion}}</p>
+                  </template>
+                  <template v-else>
+                    <img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
+                  </template>
                 </article>
             </label>
-            <input v-model="checked" class="radio" type="radio" name="vota" id="2" :value="votos.dos.voto">
+            <input v-if="!votesLoad" checked="checked" v-model="checked" class="radio" type="radio" name="vota" id="2" value="dos">
             <label class="label2" for="2">
                 <article class="vota2">
+                  <template v-if="!votesLoad">
                     <img :src="votos.dos.image" alt="votos.dos.voto">
                     <p class="padding-top">Artista: {{votos.dos.artista}}</p>
                     <p>{{votos.dos.cancion}}</p>
+                  </template>
+                  <template v-else>
+                    <img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
+                  </template>
                 </article>
             </label>
-            <input v-model="checked" class="radio" type="radio" name="vota" id="3" :value="votos.tres.voto">
+            <input v-if="!votesLoad" v-model="checked" class="radio" type="radio" name="vota" id="3" value="tres">
             <label class="label3" for="3">
                 <article class="vota3">
+                  <template v-if="!votesLoad">
                     <img :src="votos.tres.image" alt="votos.tres.voto">
                     <p class="padding-top">Artista: {{votos.tres.artista}}</p>
                     <p>{{votos.tres.cancion}}</p>
+                  </template>
+                  <template v-else>
+                    <img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
+                  </template>
                 </article>
             </label>
-            <button @click="votar" class="buttonPlain" :style="sending === true ? '' : 'cursor:pointer'">
+            <button :disable="votesLoad" @click="votar" class="buttonPlain" :style="sending === true ? '' : 'cursor:pointer'">
 			<span v-if="sending === false">Enviar</span>
 			<img v-else src="@/assets/loading-music-vote.svg" alt="Carga del envio de votos" style="width:40px" class="load" />
             </button>
@@ -37,49 +53,47 @@
   import {votesDatabase} from "@/plugins/firebase";
 	export default {
     props:{
+      votesLoad:{
+        type:Boolean,
+        required:true,
+        default:()=>{return true}
+      },
       votos:{
-        type:Object,
-        required:false,
-        default:()=>{
-          return {
-            uno:{
-              artista:"Daniel Calveti",
-              cancion:"Habla Sobre Mi",
-              voto:"Habla Sobre Mi de Daniel Calveti",
-              image:"/assets/Vota1.jpg"
-            },
-            dos:{
-              artista:"Funky",
-              cancion:"Luz y Sal",
-              voto:"Luz y Sal de Funky",
-              image:"/assets/Vota2.jpg"
-            },
-            tres:{
-              "artista":"Manny Montes",
-              "cancion":"Amor Real",
-              voto:"Amor Real de Manny Montes",
-              image:"/assets/Vota3.jpg"
-            }
-          }
-        }
+        type:Object
       }
     },
-    created(){
-      this.checked = this.votos.uno.voto
+    updated(){
+      if (
+        localStorage.getItem("voto") !== this.votos.uno.voto &&
+        localStorage.getItem("voto") !== this.votos.dos.voto &&
+        localStorage.getItem("voto") !== this.votos.tres.voto
+      ) {
+        localStorage.removeItem("voto");
+      }
+
+      votesDatabase.once("value",snap=>{
+          this.votesCounter.uno = snap.val().uno.votesCount;
+          this.votesCounter.dos = snap.val().dos.votesCount;
+          this.votesCounter.tres = snap.val().tres.votesCount;
+      })
+      votesDatabase.on("child_changed",snap=>{
+          this.votesCounter.uno = snap.val().uno.votesCount;
+          this.votesCounter.dos = snap.val().dos.votesCount;
+          this.votesCounter.tres = snap.val().tres.votesCount;
+      })
     },
 		data(){
 			return {
+        votesCounter:{},
         checked:"",
         successVote:false,
         errorVote:false,
         againVote:false,
-        sending:false,
-        urlShareFace: "",
-        urlShareTwit: "",
+        sending:false
 			}
 		},
 		methods:{
-			async votar(e) { 
+			votar(e) {
 				e.preventDefault();
         if (localStorage.getItem('voto')) {
           this.$parent._data.modalMessage = "Ya emitiste tu voto";
@@ -87,54 +101,27 @@
           this.$parent._data.modalMode = "info";
           this.$parent._data.viewModal = true;
         } else {
-          let fetch = await votesDatabase.child("vote").push(this.checked)
-            try {
-              this.$parent._data.vote = fetch.data;
-              /*
-                Cambiar para cambiar el voto 
-                localStorage.removeItem("voto 1") 
-                localStorage.setItem("voto 2", true)
-              */
+          votesDatabase
+            .child(this.checked)
+            .child("votesCount")
+            .set(this.votesCounter[this.checked] + 1).then(()=>{
+              localStorage.setItem("voto", this.votos[this.checked].voto);
               this.$parent._data.modalMode = "ok";
               this.$parent._data.modalMessage = "Enviado Correctamente!!!";
               this.$parent._data.modalContent = "¿Quieres Compartir tu voto?";
               this.$parent._data.viewModal = true;
-              localStorage.setItem('voto 1', true);
-          } catch(err){
-              console.log(error)
+              this.$parent._data.vote = this.votos[this.checked].voto;
+              FB.AppEvents.logEvent("Votos");
+
+            }).catch(err=>{
+              console.log(err)
               this.$parent._data.modalMode = "error";
               this.$parent._data.modalMessage = "Hubo un error inesperado!!!";
               this.$parent._data.modalContent = "Por favor intentalo de nuevo";
               this.$parent._data.viewModal = true;
-          }
+            })
         }
-				/*if(!this.sending){
-					if (localStorage.getItem('voto 1')) {
-						this.againVote = true;
-					} else {
-						votesDatabase.push(this.checked)
-            .then(response => {
-							this.$parent._data.vote = response.data;
-							/*
-                Cambiar para cambiar el voto 
-                localStorage.removeItem("voto 1") 
-                localStorage.setItem("voto 2", true)
-              *
-              this.$parent._data.modalMode = "ok";
-              this.$parent._data.modalMessage = "Enviado Correctamente!!!";
-              this.$parent._data.modalContent = "¿Quieres Compartir tu voto?";
-              this.$parent._data.viewModal = true;
-							localStorage.setItem('voto 1', true);
-						}).catch( error =>{
-              console.log(error)
-              this.$parent._data.modalMode = "error";
-              this.$parent._data.modalMessage = "Hubo un error inesperado!!!";
-              this.$parent._data.modalContent = "Por favor intentalo de nuevo";
-              this.$parent._data.viewModal = true;
-						})
-					}
-				}*/
-			},
+			}
 		}
 	}
 </script>

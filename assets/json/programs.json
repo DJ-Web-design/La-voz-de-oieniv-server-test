@@ -7,7 +7,7 @@
 			"fin":"7P.M.",
 			"dias":"Sábados",
 			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
-			"image":"assets/user.jpg"
+			"image":"assets/images/logo.png"
 		},
 		{
 			"nombre":"Voz que clama en el desierto",
@@ -16,7 +16,7 @@
 			"fin":"8P.M.",
 			"dias":"Miércoles",
 			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
-			"image":"assets/user.jpg"
+			"image":"assets/images/logo.png"
 		},		
 		{
 			"nombre":"La hora de la intersecion",
@@ -25,7 +25,7 @@
 			"fin":"8P.M.",
 			"dias":"Martes",
 			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
-			"image":"assets/user.jpg"
+			"image":"assets/images/logo.png"
 		},		
 		{
 			"nombre":"Entrelazados",
@@ -34,7 +34,7 @@
 			"fin":"11A.M.",
 			"dias":"Sábados",
 			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
-			"image":"assets/user.jpg"
+			"image":"assets/images/logo.png"
 		},		
 		{
 			"nombre":"La Tribu",
@@ -43,7 +43,7 @@
 			"fin":"5P.M.",
 			"dias":"Sábados",
 			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
-			"image":"assets/user.jpg"
+			"image":"assets/images/logo.png"
 		},		
 		{
 			"nombre":"Venezuela Para Cristo",
@@ -52,7 +52,7 @@
 			"fin":"9A.M.",
 			"dias":"Sábados",
 			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
-			"image":"assets/user.jpg"
+			"image":"assets/images/logo.png"
 		}
 	]
 }

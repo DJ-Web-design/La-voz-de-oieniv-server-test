@@ -1,7 +1,11 @@
 <template>
 	<div class="container">
-		<nuxt-link :to="'/Galeria/videos/'+linkTitle"><img :src="thumb" :alt="title" /></nuxt-link>
-		<h2><nuxt-link :to="'/Galeria/videos/'+linkTitle">{{title}}</nuxt-link></h2>
+		<div @click="goTo(link)">
+			<img :src="thumb" :alt="title"/>
+		</div>
+		<h2>
+			<span @click="goTo(link)">{{title}}</span>
+		</h2>
 		<p>{{description}}</p>
 		<a :href="link" target="_blank">Ver en Youtube</a>
 	</div>
@@ -14,6 +18,11 @@
 			description:String,
 			link:String,
 			linkTitle:String,
+		}, 
+		methods:{
+			goTo(path){
+				this.$parent._data.path = path;
+			}
 		}
 	}
 </script>

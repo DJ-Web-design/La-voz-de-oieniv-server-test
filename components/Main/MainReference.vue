@@ -36,76 +36,86 @@
 	}
 </script>
 <style scoped>
-			.main-container {
-			height: 600px;
+	.main-container {
+		height: 600px;
+		position: relative;
+		display: block;
+	}
+	.main-container .child-blue,
+	.main-container .child {
+		background: #4682b4;
+		display: block;
+		width: 90%;
+		height: 30%;
+		margin: 10px auto;
+		color: #fff;
+		text-align: center;
+		position: relative;
+		border-radius: 5px;
+	}
+	.main-container .child-blue div,
+	.main-container .child div {
+		width: 80%;
+		float: left;
+	}
+	.main-container .child-blue div h3,
+	.main-container .child div h3 {
+		margin: 10px 0;
+		font-size: 30px;
+	}
+	.main-container .child-blue div p,
+	.main-container .child div p {
+		margin-bottom: 10px;
+		padding: 5px 20px 5px 70px;
+		text-align: left
+	}
+	.main-container .child div span {
+		color: #fff;
+		text-decoration: none;
+	}
+	.main-container .child-blue img,
+	.main-container .child img {
+		float: left;
+		width: 95.5px;
+		margin:42px 0 0 5%;
+	}
+	.main-container .child-blue {
+		background: #fff;
+		color: #4682b4;
+	}
+	.main-container .child-blue div span {
+		color: #4682b4;
+		text-decoration: none;
+	}
+	@media screen and (min-width:950px){
+		.main-container {
+			height: 400px;
 		}
-		.main-container .child {
-			background: #4682b4;
-			display: block;
-			width: 90%;
-			height: 30%;
-			margin: 10px auto;
-			color: #fff;
+		.main-container .child,
+		.main-container .child-blue{
 			text-align: center;
-			position: relative;
-			border-radius: 5px;
+			display: inline-block;
+			width: 30%;
+			margin: 0 0 0 2.5%;
+			height: 100%;
 		}
-		.main-container .child div {
-			width: 80%;
-			float: left;
-		}
-		.main-container .child div h3 {
-			margin-top: 10px;
-			margin-bottom: 10px;
-			font-size: 30px;
-		}
-		.main-container .child div p {
-			margin-bottom: 10px;
-			padding: 5px 20px 5px 70px;
-			text-align: left
-		}
-		.main-container .child div span {
-			color: #fff;
-			text-decoration: none;
-		}
-		.main-container .child img {
-			float: left;
-			width: 15%;
-			margin:50px 0 50px 5%;
-		}
-		.main-container .child-blue {
-			background: #fff;
+		.main-container .child img,
+		.main-container .child-blue img{
+			margin: 40px auto;
+			float: none;
 			display: block;
-			width: 90%;
-			height: 30%;
-			margin: 10px auto;
-			color: #4682b4;
-			text-align: center;
-			position: relative;
-			border-radius: 5px;
 		}
-
+		.main-container .child div,
 		.main-container .child-blue div {
-			width: 80%;
-			float: left;
+			width: 100%;
 		}
-		.main-container .child-blue div h3 {
-			margin-top: 10px;
-			margin-bottom: 10px;
-			font-size: 30px;
-		}
-		.main-container .child-blue div p {
-			margin-bottom: 10px;
-			padding: 5px 20px 5px 70px;
-			text-align: left
-		}
+		.main-container .child div span,
 		.main-container .child-blue div span {
-			color: #4682b4;
-			text-decoration: none;
+			position: absolute;
+			bottom: 30px;
+			display: block;
+			width: 100%;
+			left: 0;
 		}
-		.main-container .child-blue img {
-			float: left;
-			width: 15%;
-			margin:50px 0 50px 5%;
-		}
+	}
 </style>

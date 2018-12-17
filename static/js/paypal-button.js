@@ -28,9 +28,9 @@ payment: function (data, actions) {
   onAuthorize: function (data, actions) {
     return actions.payment.execute()
       .then(function () {
+        FB.AppEvents.logEvent("Donacion");
         // Show a confirmation message to the buyer
-        window.alert('Gracias por donar.');
-        firebase.donorsDatabase.push(1);
+        window.alert('Gracias por tu apoyo.');
       });
   }
 }, '#paypal-button');

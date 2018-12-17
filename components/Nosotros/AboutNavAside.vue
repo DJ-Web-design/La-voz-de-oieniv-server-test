@@ -22,7 +22,7 @@
 </template>
 <script>
 	export default {
-		data:()=>{
+		data(){
 			return {
         		tab:1,
         		activeTab:"active-tab",

@@ -29,4 +29,5 @@ function FBLogin() {
     })
     $vm0.$data.showModal = false;
     $vm0.$data.show = false;
+    FB.AppEvents.logEvent("Facebook Login");
 }

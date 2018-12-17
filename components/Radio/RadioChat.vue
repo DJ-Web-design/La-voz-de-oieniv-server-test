@@ -78,7 +78,7 @@
             ButtonFlat,
             RadioModal
         },
-		data:()=>{
+		data(){
 			return {
                 dropped:false,
                 show: true,
@@ -110,11 +110,10 @@
                         chat.push(valor);
                     }
                 })
-
             })
         },
 		methods:{
-            sendMessage: function (e) {
+            sendMessage(e) {
                 e.preventDefault(); 
                 let formatofecha = new Date();
                 let d = formatofecha.getUTCDate();
@@ -129,7 +128,7 @@
                         user: this.chat.user, 
                         pic: this.chat.pic, 
                         date: Fecha
-                    })
+                    });
                     /*chatDatabase.push({
                         message: this.chat.message, 
                         user: this.chat.user, 
@@ -145,6 +144,22 @@
 	}
 </script>
 <style scoped>
+
+.boton{
+    background:#ff8f00;
+    border-radius: 50px;
+    height:36px;
+    border:none;
+    width: 200px;
+    margin: 10px auto;
+    color:white;
+    transition:ease .4s;
+    cursor:pointer;
+    display: block;
+}
+.boton:hover{
+    background:rgba(75, 127, 232, .3);
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s
 }
@@ -193,9 +208,10 @@
 }
 
 .ingresa {
+    padding-top: 1%;
     text-align: center;
-    width: 99.6%;
-    height: 100%;
+    width: 99.7%;
+    height: 95%;
     background: rgb(53, 95, 179);
     z-index: 3
 }
