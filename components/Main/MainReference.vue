@@ -30,7 +30,7 @@
 	export default {
 		methods:{
 			goTo(link){
-				this.$router.push(link)
+				this.$router.push(link);
 			}
 		}
 	}

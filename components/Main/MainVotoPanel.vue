@@ -1,126 +1,162 @@
 <template>
 	<div class="vota">
-        <a name="vota"></a>
-        <h2>Vota por tu Favorita</h2>
-        <form>
-            <input v-if="!votesLoad" v-model="checked" class="radio" type="radio" name="vota" id="1" value="uno" checked>
-            <label class="label1" for="1">
-                <article class="vota1">
-                  <template v-if="!votesLoad">
-                    <img :src="votos.uno.image" alt="votos.uno.voto">
-                    <p class="padding-top">Artista: {{votos.uno.artista}}</p>
-                    <p>{{votos.uno.cancion}}</p>
-                  </template>
-                  <template v-else>
-                    <img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
-                  </template>
-                </article>
-            </label>
-            <input v-if="!votesLoad" checked="checked" v-model="checked" class="radio" type="radio" name="vota" id="2" value="dos">
-            <label class="label2" for="2">
-                <article class="vota2">
-                  <template v-if="!votesLoad">
-                    <img :src="votos.dos.image" alt="votos.dos.voto">
-                    <p class="padding-top">Artista: {{votos.dos.artista}}</p>
-                    <p>{{votos.dos.cancion}}</p>
-                  </template>
-                  <template v-else>
-                    <img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
-                  </template>
-                </article>
-            </label>
-            <input v-if="!votesLoad" v-model="checked" class="radio" type="radio" name="vota" id="3" value="tres">
-            <label class="label3" for="3">
-                <article class="vota3">
-                  <template v-if="!votesLoad">
-                    <img :src="votos.tres.image" alt="votos.tres.voto">
-                    <p class="padding-top">Artista: {{votos.tres.artista}}</p>
-                    <p>{{votos.tres.cancion}}</p>
-                  </template>
-                  <template v-else>
-                    <img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
-                  </template>
-                </article>
-            </label>
-            <button :disable="votesLoad" @click="votar" class="buttonPlain" :style="sending === true ? '' : 'cursor:pointer'">
-			<span v-if="sending === false">Enviar</span>
-			<img v-else src="@/assets/loading-music-vote.svg" alt="Carga del envio de votos" style="width:40px" class="load" />
-            </button>
-        </form>
-    </div>
+		<a name="vota"></a>
+		<h2>Vota por tu Favorita</h2>
+		<form>
+			<input 
+			 v-if="!votesLoad"
+			 v-model="checked"
+			 class="radio"
+			 type="radio"
+			 name="vota"
+			 id="1"
+			 value="uno"
+			 checked
+			>
+			<label class="label1" for="1">
+				<article class="vota1">
+					<template v-if="!votesLoad">
+						<img :src="votos.uno.image" alt="votos.uno.voto">
+						<p class="padding-top">Artista: {{votos.uno.artista}}</p>
+						<p>{{votos.uno.cancion}}</p>
+					</template>
+					<template v-else>
+						<img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
+					</template>
+				</article>
+			</label>
+			<input
+			 v-if="!votesLoad"
+			 checked="checked"
+			 v-model="checked"
+			 class="radio"
+			 type="radio"
+			 name="vota"
+			 id="2"
+			 value="dos"
+			>
+			<label class="label2" for="2">
+				<article class="vota2">
+					<template v-if="!votesLoad">
+						<img :src="votos.dos.image" alt="votos.dos.voto">
+						<p class="padding-top">Artista: {{votos.dos.artista}}</p>
+						<p>{{votos.dos.cancion}}</p>
+					</template>
+					<template v-else>
+						<img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
+					</template>
+				</article>
+			</label>
+			<input
+			 v-if="!votesLoad"
+			 v-model="checked"
+			 class="radio"
+			 type="radio"
+			 name="vota"
+			 id="3"
+			 value="tres"
+			>
+			<label class="label3" for="3">
+				<article class="vota3">
+					<template v-if="!votesLoad">
+						<img :src="votos.tres.image" alt="votos.tres.voto">
+						<p class="padding-top">Artista: {{votos.tres.artista}}</p>
+						<p>{{votos.tres.cancion}}</p>
+					</template>
+					<template v-else>
+						<img class="load" src="~/assets/spinner.svg" style="margin:auto; width: 50px">
+					</template>
+				</article>
+			</label>
+			<button
+			 :disable="votesLoad"
+			 @click="votar"
+			 class="buttonPlain"
+			 :style="sending === true ? '' : 'cursor:pointer'"
+			>
+				<span v-if="sending === false">Enviar</span>
+				<img
+				 v-else src="@/assets/loading-music-vote.svg"
+				 alt="Carga del envio de votos"
+				 style="width:40px"
+				 class="load"
+				/>
+			</button>
+		</form>
+	</div>
 </template>
 <script>
-  import {votesDatabase} from "@/plugins/firebase";
+	import {votesDatabase} from "@/plugins/firebase";
 	export default {
-    props:{
-      votesLoad:{
-        type:Boolean,
-        required:true,
-        default:()=>{return true}
-      },
-      votos:{
-        type:Object
-      }
-    },
-    updated(){
-      if (
-        localStorage.getItem("voto") !== this.votos.uno.voto &&
-        localStorage.getItem("voto") !== this.votos.dos.voto &&
-        localStorage.getItem("voto") !== this.votos.tres.voto
-      ) {
-        localStorage.removeItem("voto");
-      }
+		props:{
+			votesLoad:{
+				type:Boolean,
+				required:true,
+				default:()=>{return true}
+			},
+			votos:{
+				type:Object
+			}
+		},
+		updated(){
+			if (
+				localStorage.getItem("voto") !== this.votos.uno.voto &&
+				localStorage.getItem("voto") !== this.votos.dos.voto &&
+				localStorage.getItem("voto") !== this.votos.tres.voto
+			) {
+				localStorage.removeItem("voto");
+			}
 
-      votesDatabase.once("value",snap=>{
-          this.votesCounter.uno = snap.val().uno.votesCount;
-          this.votesCounter.dos = snap.val().dos.votesCount;
-          this.votesCounter.tres = snap.val().tres.votesCount;
-      })
-      votesDatabase.on("child_changed",snap=>{
-          this.votesCounter.uno = snap.val().uno.votesCount;
-          this.votesCounter.dos = snap.val().dos.votesCount;
-          this.votesCounter.tres = snap.val().tres.votesCount;
-      })
-    },
+			votesDatabase.once("value",snap=>{
+					this.votesCounter.uno = snap.val().uno.votesCount;
+					this.votesCounter.dos = snap.val().dos.votesCount;
+					this.votesCounter.tres = snap.val().tres.votesCount;
+			})
+			votesDatabase.on("child_changed",snap=>{
+					this.votesCounter.uno = snap.val().uno.votesCount;
+					this.votesCounter.dos = snap.val().dos.votesCount;
+					this.votesCounter.tres = snap.val().tres.votesCount;
+			})
+		},
 		data(){
 			return {
-        votesCounter:{},
-        checked:"",
-        successVote:false,
-        errorVote:false,
-        againVote:false,
-        sending:false
+				votesCounter:{},
+				checked:"",
+				successVote:false,
+				errorVote:false,
+				againVote:false,
+				sending:false
 			}
 		},
 		methods:{
-			votar(e) {
+			async votar(e) {
 				e.preventDefault();
-        if (localStorage.getItem('voto')) {
-          this.$parent._data.modalMessage = "Ya emitiste tu voto";
-          this.$parent._data.modalContent = "Por favor intentalo la semana que viene";
-          this.$parent._data.modalMode = "info";
-          this.$parent._data.viewModal = true;
-        } else {
-          votesDatabase
-            .child(this.checked)
-            .child("votesCount")
-            .set(this.votesCounter[this.checked] + 1).then(()=>{
-              localStorage.setItem("voto", this.votos[this.checked].voto);
-              this.$parent._data.modalMode = "ok";
-              this.$parent._data.modalMessage = "Enviado Correctamente!!!";
-              this.$parent._data.modalContent = "¿Quieres Compartir tu voto?";
-              this.$parent._data.viewModal = true;
-              this.$parent._data.vote = this.votos[this.checked].voto;
-              FB.AppEvents.logEvent("Votos");
+				if (localStorage.getItem('voto')) {
+					this.$parent._data.modalMessage = "Ya emitiste tu voto";
+					this.$parent._data.modalContent = "Por favor intentalo la semana que viene";
+					this.$parent._data.modalMode = "info";
+					this.$parent._data.viewModal = true;
+				} else {
+					try {
+						await votesDatabase
+							.child(this.checked)
+							.child("votesCount")
+							.set(this.votesCounter[this.checked] + 1);
 
-            }).catch(err=>{
-              console.log(err)
-              this.$parent._data.modalMode = "error";
-              this.$parent._data.modalMessage = "Hubo un error inesperado!!!";
-              this.$parent._data.modalContent = "Por favor intentalo de nuevo";
-              this.$parent._data.viewModal = true;
-            })
-        }
+						localStorage.setItem("voto", this.votos[this.checked].voto);
+						this.$parent._data.modalMode = "ok";
+						this.$parent._data.modalMessage = "Enviado Correctamente!!!";
+						this.$parent._data.modalContent = "¿Quieres Compartir tu voto?";
+						this.$parent._data.viewModal = true;
+						this.$parent._data.vote = this.votos[this.checked].voto;
+						FB.AppEvents.logEvent("Votos");
+					} catch(err){
+						this.$parent._data.modalMode = "error";
+						this.$parent._data.modalMessage = "Hubo un error inesperado!!!";
+						this.$parent._data.modalContent = "Por favor intentalo de nuevo";
+						this.$parent._data.viewModal = true;
+					}
+				}
 			}
 		}
 	}
@@ -137,10 +173,10 @@
 }
 @media screen and (min-width:767px){
  .vota h2,.articulo .divisor1 h2 {
-  font-size:50px
+	font-size:50px
  }
  .vota .vota2,.vota .vota3 {
-  margin-top:10px
+	margin-top:10px
  }
 }
 .vota article {
@@ -236,114 +272,114 @@ overflow: hidden;
 }
 @media screen and (min-width:480px) {
  .vota article img {
-  float:none;
-  margin:5px auto 0 auto;
-  display:block;
-  height:120px;
-  width:120px
+	float:none;
+	margin:5px auto 0 auto;
+	display:block;
+	height:120px;
+	width:120px
  }
  .vota h2 {
-  font-size:25px;
+	font-size:25px;
  }
  .vota article {
-  text-align:center;
-  height:260px;
-  position:relative;
-  float:left;
-  width:30%;
-  margin-left:2%
+	text-align:center;
+	height:260px;
+	position:relative;
+	float:left;
+	width:30%;
+	margin-left:2%
  }
  .vota article p {
-  padding-top:0
+	padding-top:0
  }
  .vota {
-  width:98%;
+	width:98%;
  }
  .vota button {
-  margin-top:10px;
+	margin-top:10px;
  }
  .vota label::before {
-  top:210px;
-  left:15%
+	top:210px;
+	left:15%
  }
  .vota label.label2::before {
-  left:47.5%
+	left:47.5%
  }
  .vota label.label3::before {
-  left:80%
+	left:80%
  }
 }
 @media screen and (min-width:767px) {
  .vota {
-  width:100%;
-  margin-left:0
+	width:100%;
+	margin-left:0
  }
  .vota article {
-  float:left;
-  width:30%
+	float:left;
+	width:30%
  }
  .vota article img {
-  margin:5px auto 0 auto
+	margin:5px auto 0 auto
  }
  .vota h2 {
-  font-size:50px;
-  margin-bottom:30px
+	font-size:50px;
+	margin-bottom:30px
  }
  .vota label::before {
-  width:25px;
-  height:25px;
-  border:5px solid #4B7FE8
+	width:25px;
+	height:25px;
+	border:5px solid #4B7FE8
  }
 }
 @media screen and (min-width:950px) {
  .vota {
-  width:100%;
-  overflow:hidden
+	width:100%;
+	overflow:hidden
  }
  .vota article p {
-  top:70px;
-  position:absolute;
-  left:140px;
-  width:50%;
-  color:#4F4F4F;
-  display:block;
-  font-size:18px
+	top:70px;
+	position:absolute;
+	left:140px;
+	width:50%;
+	color:#4F4F4F;
+	display:block;
+	font-size:18px
  }
  .vota article p.padding-top {
-  top:20px
+	top:20px
  }
  .vota article img {
-  margin:10px 0 0 0
+	margin:10px 0 0 0
  }
  .vota article {
-  text-align:left;
-  float:left;
-  height:140px;
-  margin-left:5%;
-  margin-right:5%;
-  display:block;
-  width:90%
+	text-align:left;
+	float:left;
+	height:140px;
+	margin-left:5%;
+	margin-right:5%;
+	display:block;
+	width:90%
  }
  .vota h2 {
-  margin:15px 0 20px 0;
-  font-size:60px
+	margin:15px 0 20px 0;
+	font-size:60px
  }
  .vota button {
-  margin-top:15px;
-  width:30%;
+	margin-top:15px;
+	width:30%;
  }
  .vota label::before {
-  border:5px solid #4B7FE8;
-  top:57px;
-  left:88%
+	border:5px solid #4B7FE8;
+	top:57px;
+	left:88%
  }
  .vota label.label2::before {
-  top:211px;
-  left:88%
+	top:211px;
+	left:88%
  }
  .vota label.label3::before {
-  top:365px;
-  left:88%
+	top:365px;
+	left:88%
  }
 }
 @media screen and (min-width:950px) {
@@ -351,12 +387,12 @@ overflow: hidden;
  .vota {
  }
  .separador {
-  width:100%;
-  height:10px;
-  background:black
+	width:100%;
+	height:10px;
+	background:black
  }
  .vota article {
-  background:#e7e5e5
+	background:#e7e5e5
  }
 }
 .load{

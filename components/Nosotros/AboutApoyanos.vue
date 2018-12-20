@@ -1,5 +1,4 @@
 <template>
-	
 	<div class="content apoyanos">
 		<h2>Apoyanos</h2>
 		<h3>En Oracion</h3>

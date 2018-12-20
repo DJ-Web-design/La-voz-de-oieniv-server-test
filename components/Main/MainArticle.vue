@@ -1,26 +1,29 @@
 <template>
 	<div class="articulo">
-				<div class="divisor1">
-						<h1>La Voz de OIENIV</h1>
-						<div class="fb-like" data-href="http://lavozdeoieniv.com" data-layout="box_count" data-action="like"
-								data-size="large" data-show-faces="true" data-share="true"></div>
-						<a href="https://twitter.com/intent/user?screen_name=@lavozdeoieniv" target="_blank">
-								<div class="follow-twitter">
-										<span class="icon-twitter">
-												<span>Seguir</span>
-										</span>
-								</div>
-						</a>
+		<div class="divisor1">
+			<h1>La Voz de OIENIV</h1>
+			<div 
+			 class="fb-like" 
+			 data-href="http://lavozdeoieniv.com" 
+			 data-layout="box_count" 
+			 data-action="like"
+			 data-size="large" 
+			 data-show-faces="true" 
+			 data-share="true"
+			></div>
+			<a href="https://twitter.com/intent/user?screen_name=@lavozdeoieniv" target="_blank">
+				<div class="follow-twitter">
+					<span class="icon-twitter">
+						<span>Seguir</span>
+					</span>
 				</div>
-				<div class="divisor2">
-						<h2>La Radio Donde La Protagonista Es La Palabra de Dios</h2>
-						<p>Porque nos tomamos en serio Mateo 28:19-20, creemos que nuestro Dios puso en nuestras manos esta poderosa herramienta,
-								como son los medios de comunicacion, que, como caballos de fuerza se encargan de llevar el mensaje de salvacion
-								por los 5 continentes, asi que seguiremos dependiendo de Él, y del apoyo de su pueblo, en oracion y ofrendas
-								para sostener y extender este ministerio, por su respaldo, Muchas Gracias y que mi Dios te continue Bendiciendo,
-								Rica Y Poderosamente.</p>
-				</div>
+			</a>
 		</div>
+		<div class="divisor2">
+			<h2>La Radio Donde La Protagonista Es La Palabra de Dios</h2>
+			<p>Porque nos tomamos en serio Mateo 28:19-20, creemos que nuestro Dios puso en nuestras manos esta poderosa herramienta, como son los medios de comunicacion, que, como caballos de fuerza se encargan de llevar el mensaje de salvacion por los 5 continentes, asi que seguiremos dependiendo de Él, y del apoyo de su pueblo, en oracion y ofrendas para sostener y extender este ministerio, por su respaldo, Muchas Gracias y que mi Dios te continue Bendiciendo, Rica Y Poderosamente.</p>
+		</div>
+	</div>
 </template>
 <style scoped>
 .pedido-titulo h1,.vota h1,.articulo .divisor1 h1 {

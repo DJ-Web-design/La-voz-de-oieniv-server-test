@@ -87,11 +87,10 @@
 		},
 		methods:{
 			clear(){
-				clearInterval(this.interval)
+				clearInterval(this.interval);
 			},
 			goTo(link){
-				console.log(link)
-				this.$router.push({path:link})
+				this.$router.push({path:link});
 			}
 		},
 		watch:{
@@ -100,7 +99,7 @@
 					var that = this;
 					this.interval = setInterval(()=>{
 						that.sliderNo++;
-					}, 6000)
+					}, 6000);
 				}
 			},
 			sliderNo(next, prev){
