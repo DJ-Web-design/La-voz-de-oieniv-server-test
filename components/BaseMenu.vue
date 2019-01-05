@@ -6,7 +6,7 @@
 		</div>
 		<div class="sombra" :style="width < 950 ? styleSombra: 'display:none'" @click="openMenu()"></div>
 		<nav class="menu" :style="width < 950 ? styleMenu: 'left:0'">
-			<figure>
+			<figure> 
 				<nuxt-link to="/">
 					<img src="@/assets/logo.png" alt="">
 				</nuxt-link>
@@ -48,7 +48,7 @@
 </template>
 <script>
 	export default {
-		data: function(){
+		data(){
 			return {
 				styleMenu:{
 					left:""
@@ -62,7 +62,7 @@
 			}
 		},
 		methods:{
-			openMenu: function(){
+			openMenu(){
 					if (this.open === false){
 						this.styleMenu.left = 0;
 						this.styleSombra.display = "block";

@@ -73,13 +73,14 @@ export default {
 		}
 	},
 	mounted(){
+		initializeFB();
 		let videos = this.videos;
 		videoDatabase.once("value", e=>{
 			videos = [];
 			e.forEach(snap=>{
 				videos.push(snap.val());
 			})
-		})
+		});
 	},
 	updated(){
 		if (this.$route.hash) {

@@ -3,8 +3,8 @@
 		<div>
 			<input type="text" v-model="title"  placeholder="Titulo" />
 			<input type="text" v-model="labels"  placeholder="Tags" />
-			<input type="text" v-model="url" placeholder="URL"  />
 			<button @click="publish()">Publicar</button>
+			<button v-if="type === 'new'" @click="save()">Guardar</button>
 			<button @click="$parent._data.edit = false">Cerrar</button>
 		</div>
 		<div id="editor" v-html="data.content">
@@ -49,7 +49,8 @@
 			return {
 				title:"",
 				url:"",
-				labels:""
+				labels:"",
+				content:""
 			}
 		},
 		mounted() {
@@ -79,8 +80,7 @@
 				debug:"info"
 			});
 			quill.on('text-change', function(delta, oldDelta, source) {
-				let content = quill.root.innerHTML;
-				console.log(content)
+				this.content = quill.root.innerHTML;
 			});
 		},
 		methods:{
@@ -90,6 +90,24 @@
 				}
 				else if(this.type === "update") {
 
+				}
+			},
+			async save() {
+				try {
+					const requestBody = {
+						content:encodeURI(this.content),
+						labels:encodeURI(this.labels),
+						title:encodeURI(this.title)
+					}
+					const config = {
+						headers: {
+							'Content-Type': 'application/x-www-form-urlencoded'
+						}
+					}
+				
+					let {data} = await axios.post("https://lavozdeoieniv.herokuapp.com/save-post", requestBody, config)
+				} catch(err) {
+					alert("Error al guardar");
 				}
 			}
 		}

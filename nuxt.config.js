@@ -18,12 +18,12 @@ module.exports = {
 			{name:"twitter:site", content:"@lavozdeoieniv"},
 		],
 		script:[
-			{src:"/js/fb-button.js"}
+			{src:"/js/FB.js"}
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{ rel:"canonical", href:"https://www.lavozdeoieniv.tk" },
-			{rel:"stylesheet", href:"/css/page.css"}
+			{ rel:"stylesheet", href:"/css/page.css" }
 
 		]
 	},

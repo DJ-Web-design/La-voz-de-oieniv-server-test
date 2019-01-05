@@ -11,6 +11,7 @@
 	float:left !important;
 }
 .publicidad {
+    position: relative;
     width: 100%;
     height: 150px;
     margin: 20px 0 10px 0;

@@ -22,6 +22,9 @@
 				showModal: false
 			}
 		},
+		mounted() {
+			initializeFB();
+		},
 		head(){
 			let description = "Lee acerca de lo que trata este proyecto, nuesta historia, misión, visión, nuestro equipo de trabajo, asi conoceras mas acerca de esta radio, La Voz de OIENIV, La Radio donde La Protagonista es: La Palabra de Dios.";
 			return { 

@@ -16,21 +16,20 @@
       BaseFooter
     },
     mounted(){
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '126968564676905',
-          xfbml      : true,
-          version    : 'v3.0'
-        });
-        FB.AppEvents.logPageView();
-      };
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/es_LA/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+      /* Inject Twitter Script*/
+      (function(d, b, id){
+        var js = d.getElementsByTagName(b)[0];
+        let nuxtBody = d.getElementById("__nuxt");
+
+        if (d.getElementById(id)) return
+
+        js = d.createElement("script");
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        js.async = true;
+        js.charset = "utf-8";
+        nuxtBody.parentNode.insertBefore(js, nuxtBody);
+      }(document, 'body', "widget-twitter"));
     }
   }
 </script>

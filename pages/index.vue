@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<MainSlider :slider="slider" :sliderData="sliderData"/>
 		<div class="social-media">
 			<ShareButtonFacebook href="http://www.facebook.com/sharer.php?u=https://www.lavozdeoieniv.tk" />
@@ -50,6 +49,7 @@ export default {
 		MainVotoPanel
 	},
 	async mounted(){
+		initializeFB();
 		var that = this;
 		var slider = [];
 		try {
@@ -69,12 +69,14 @@ export default {
 		await votesDatabase.once("value", snap=>{
 			votos = snap.val();
 		});
+
 		let mayor = "uno";
 		let arr = ["uno", "dos", "tres"];
-		for(let i = 0; i < arr.length; i++) {
+		
+		for(let i = 0; i < arr.length; i++)
 			if (votos[arr[i]].votesCount > votos[mayor].votesCount)
 				mayor = arr[i];
-		}
+		
 		this.mayor = votos[mayor];
 		this.votesLoad = false;
 		this.votos = votos;
@@ -92,11 +94,11 @@ export default {
 			vote:undefined,
 			urlShareFace:undefined,
 			urlShareTwit:undefined,
-			mayor:[]
+			mayor:{}
 		}
 	},
-	meta(){
-		let description = "Disfruta de: musica, reflexiones, predicas, y transmisiones en vivo de nuestros programas. Solo por La Voz de OIENIV";
+	head(){
+		let description = "Disfruta de: musica, reflexiones, predicas, y transmisión en vivo de nuestros programas. Solo por La Voz de OIENIV, La radio donde la protagonista es: La Palabra de Dios";
 		return {
 			meta:[
 				{ name:"keywords",  hid:"keywords", content:"musica cristiana online, musica evangelica online, musica cristiana evangelica online de venezuela, radio cristiana de venezuela, emisora cristiana evangelica en linea" },
@@ -107,7 +109,7 @@ export default {
 				{ property:"og:description", content:description},
 				//twitter cards
 				{name:"twitter:description", content:description},
-			],
+			]
 		}
 	}
 }
