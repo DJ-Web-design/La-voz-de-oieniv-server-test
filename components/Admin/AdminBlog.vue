@@ -45,7 +45,7 @@
 			try {
 				this.loading = true;
 
-				let {data} = await get("https://www.googleapis.com/blogger/v3/blogs/7044473803573631794/posts?key=AIzaSyC-d2WibcbOrgNRxxDHDppv1aexhYskvLc&fields=items(id,url,title,selfLink,labels)");
+				let {data} = await get("https://www.googleapis.com/blogger/v3/blogs/7044473803573631794/posts?key=<Key>&fields=items(id,url,title,selfLink,labels)");
 
 				this.posts = data.items;
 				this.loading = false;
@@ -57,7 +57,7 @@
 		},
 		methods: {
 			async editPost(postLink) {
-				let {data} = await get(`${postLink}?key=AIzaSyC-d2WibcbOrgNRxxDHDppv1aexhYskvLc&fields=content,url,title,updated,labels`);
+				let {data} = await get(`${postLink}?key=<KEY>&fields=content,url,title,updated,labels`);
 
 				this.postData = data;
 				this.edit = true;
