@@ -13,7 +13,7 @@
 			<div>
 				<h3>Interactua</h3>
 				<p>Mira nuestra transmision en vivo, comparte con nosotros y danos tu opinión.</p>
-				<span>Transmision en vivo</span>
+				<nuxt-link to="/radio">Transmision en vivo</nuxt-link>
 			</div>
 		</div>
 		<div class="child">
@@ -21,7 +21,7 @@
 			<div>
 				<h3>Descubre</h3>
 				<p>Enterate un poco mas acerca de nosotros, nuestra historia y porque estamos aquí.</p>
-				<span>Acerca de nosotros</span>
+				<nuxt-link to="/nosotros">Acerca de nosotros</nuxt-link>
 			</div>
 		</div>
 	</div>
@@ -37,7 +37,7 @@
 </script>
 <style scoped>
 	.main-container {
-		height: 600px;
+		height: 900px;
 		position: relative;
 		display: block;
 	}
@@ -55,7 +55,7 @@
 	}
 	.main-container .child-blue div,
 	.main-container .child div {
-		width: 80%;
+		width: 100%;
 		float: left;
 	}
 	.main-container .child-blue div h3,
@@ -67,25 +67,40 @@
 	.main-container .child div p {
 		margin-bottom: 10px;
 		padding: 5px 20px 5px 70px;
-		text-align: left
+		text-align: left;
 	}
+	.main-container .child div a,
 	.main-container .child div span {
 		color: #fff;
 		text-decoration: none;
 	}
 	.main-container .child-blue img,
 	.main-container .child img {
-		float: left;
 		width: 95.5px;
-		margin:42px 0 0 5%;
+		margin:10px auto 0;
+		display: block;
 	}
 	.main-container .child-blue {
 		background: #fff;
 		color: #4682b4;
 	}
-	.main-container .child-blue div span {
+	.main-container .child-blue div span,
+	.main-container .child-blue div a {
 		color: #4682b4;
 		text-decoration: none;
+	}
+	@media screen and (min-width: 708px) {
+		.main-container .child-blue img,
+		.main-container .child img {
+			float: left;
+			width: 95.5px;
+			margin:42px 0  0 5%;
+		}
+		.main-container {
+			height: 600px;
+			position: relative;
+			display: block;
+		}
 	}
 	@media screen and (min-width:950px){
 		.main-container {
@@ -109,6 +124,8 @@
 		.main-container .child-blue div {
 			width: 100%;
 		}
+		.main-container .child div a,
+		.main-container .child-blue div a,
 		.main-container .child div span,
 		.main-container .child-blue div span {
 			position: absolute;

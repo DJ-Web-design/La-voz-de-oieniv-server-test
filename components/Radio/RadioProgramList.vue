@@ -128,7 +128,6 @@
     .programas .bloque-programa div img {
         width: 140px;
         max-width: 500px;
-        height: 140px
     }
     .programas .bloque-programa div div {
         width: 65%;

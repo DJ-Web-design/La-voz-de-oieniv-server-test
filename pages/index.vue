@@ -9,16 +9,18 @@
 		<MainArticle/>
 		<MainReference/>
 		<MainVotoPanel :votos="votos" :votesLoad="votesLoad"/>
-		<MainSonadoPanel/>
+		<MainSonadoPanel :load="votesLoad" :mayor="mayor"/>
 		<MainSocialMedia/>
 		<MainSocialButtons/>
-		<MainModal 
-		 v-show="viewModal" 
-		 :message="modalMessage" 
-		 :content="modalContent" 
-		 :mode="modalMode"
-		 :vote="vote"
-		/>
+		<transition name="fade" mode="out-in">
+			<MainModal
+			 v-show="viewModal" 
+			 :message="modalMessage" 
+			 :content="modalContent" 
+			 :mode="modalMode"
+			 :vote="vote"
+			/>
+		</transition>
 	</div>
 </template>
 <script>
@@ -67,7 +69,13 @@ export default {
 		await votesDatabase.once("value", snap=>{
 			votos = snap.val();
 		});
-
+		let mayor = "uno";
+		let arr = ["uno", "dos", "tres"];
+		for(let i = 0; i < arr.length; i++) {
+			if (votos[arr[i]].votesCount > votos[mayor].votesCount)
+				mayor = arr[i];
+		}
+		this.mayor = votos[mayor];
 		this.votesLoad = false;
 		this.votos = votos;
 	},
@@ -83,7 +91,8 @@ export default {
 			modalMode:undefined,
 			vote:undefined,
 			urlShareFace:undefined,
-			urlShareTwit:undefined
+			urlShareTwit:undefined,
+			mayor:[]
 		}
 	},
 	meta(){
@@ -106,6 +115,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to, .fade-leave-active {
+  opacity: 0
+}
 .social-media div {
 	float:left;
 	margin-top:10px;

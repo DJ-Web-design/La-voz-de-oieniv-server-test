@@ -1,22 +1,30 @@
 <template>
 	<div class="imagen-4">
 		<div class="pedido-titulo">
-			<h2>Lo Mas Sonado De La Semana</h2>
+			<h2>Lo Mas Votado En Estos Momentos</h2>
+		</div>
+		<div id="animate">
+			<span>¡Animate! Tu voto puede cambiar este resultado.</span>
 		</div>
 		<div class="lomaspedido">
-			<figure>
-				<img src="@/assets/Impulso.jpg" alt="">
-				<span>
-					<h3>
-						<span class="cantante-top" style="margin-top:20px">Cantante: Evan Craft</span>
-					</h3>
-					<h3 id="song-name">Impulso</h3>
-				</span>
-				<div id="socialContainer">
-					<SocialButton :link="'http://twitter.com/share?text='+link" twitter/>
-					<SocialButton :link="'http://www.facebook.com/sharer.php?text='+link" facebook/>
-				</div>
-			</figure>
+			<template v-if="load">
+				<img class="load" src="~/assets/spinner.svg">
+			</template>
+			<template v-else>
+				<figure>
+					<img :src="mayor.image" :alt="mayor.voto">
+					<span>
+						<h3>
+							<span class="cantante-top" style="margin-top:20px">Cantante: {{mayor.artista}}</span>
+						</h3>
+						<h3 id="song-name">{{mayor.cancion}}</h3>
+					</span>
+					<div id="socialContainer">
+						<SocialButton :link="'http://twitter.com/share?text='+link" twitter/>
+						<SocialButton :link="'http://www.facebook.com/sharer.php?text='+link" facebook/>
+					</div>
+				</figure>
+			</template>
 		</div>
 	</div>
 </template>
@@ -26,14 +34,31 @@ import SocialButton from "@/components/Widgets/PedidoSocialButton"
 		components:{
 			SocialButton
 		},
+		props:{
+			mayor:{
+				type:Object,
+				required:true,
+				default:()=>{}
+			},
+			load:{
+				type:Boolean,
+				required:true
+			}
+		},
+		mounted() {
+			this.link =  `Lo mas votado de esta semana en La Voz de OIENIV es "${this.mayor.voto}". Entra y vota por tu canción favorita.`
+		},
 		data(){
 			return {
-				link: "Lo mas sonado de esta semana en La Voz de OIENIV es \"Impulso de Evan Craft\". Entra y vota por tu canción favorita"
+				link:""
 			}
 		}
 	}
 </script>
 <style scoped>
+#animate {
+	text-align: center;
+}
 .pedido-titulo h2 {
  margin-bottom:10px;
  text-align:center;
@@ -173,6 +198,26 @@ z-index:1000;
 	}
 	#socialContainer{
 		margin-top: 50px;
+	}
+}
+.load{
+	animation:rotate infinite linear .6s;
+	margin: 35px auto 0;
+    width: 80px;
+    display: block;
+}
+@media screen and (min-width:767px){
+	.load{
+    	width: 150px;
+		margin: 70px auto 0;
+
+	}
+}
+@keyframes rotate {
+	from {
+		transform:rotate(0deg)
+	} to {
+		transform:rotate(360deg)
 	}
 }
 </style>
