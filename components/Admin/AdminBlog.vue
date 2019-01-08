@@ -62,9 +62,14 @@
 			}
 		},
 		methods: {
+<<<<<<< HEAD
 			async editPost(id) {
 				try {
 					let {data} = await get("https://lavozdeoieniv.herokuapp.com/posts/"+id);
+=======
+			async editPost(postLink) {
+				let {data} = await get(`${postLink}?key=<KEY>&fields=content,url,title,updated,labels`);
+>>>>>>> fb369397914a598f6a873670409c3d5e952978ac
 
 					this.postData = data;
 					this.edit = true;
