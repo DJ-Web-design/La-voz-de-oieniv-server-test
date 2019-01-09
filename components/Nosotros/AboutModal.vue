@@ -26,6 +26,15 @@
 			closeModal(){
 				this.$parent._data.showModal = false;
 			}
+		},
+		mounted() {
+			setInterval(()=>waitToRender(), 1000);
+			function waitToRender() {
+				if (paypal) {
+					render();
+					clearInterval(()=>waitToRender(), 1000);
+				}
+			};
 		}
 	}
 </script>
