@@ -88,7 +88,13 @@
 	border-radius:5px;
 	margin:20px 5% 0 15%;
 	height:120px;
-	width:120px
+	width:120px;
+ }
+ .articulo .divisor1 div.fb-like {
+ 	width: auto;
+ 	height: auto;
+ 	padding: 14px;
+ 	min-width: 90px
  }
  .articulo .divisor1 div span {
 	display:block;

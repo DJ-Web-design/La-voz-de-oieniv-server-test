@@ -21,6 +21,10 @@
                         @click="page = 4" 
                         :class="{active: page === 4, noActive: page !== 4}"
                         >Administrar Slider</li>
+                        <li 
+                        @click="page = 5" 
+                        :class="{active: page === 5, noActive: page !== 5}"
+                        >Blog</li>
                     </ul>
                 </nav>
             </header>
@@ -28,6 +32,7 @@
             <AdminUpload v-else-if="page === 2"/>
             <AdminChat v-else-if="page === 3"/>
             <AdminSlider v-else-if="page === 4"/>
+            <AdminBlog v-else-if="page === 5"/>
         </template>
     </div>
 </template>
@@ -36,7 +41,8 @@
     import AdminVotesCount from "@/components/Admin/AdminVotesCount";
     import AdminUpload from "@/components/Admin/AdminUpload";
     import AdminChat from "@/components/Admin/AdminChat";
-    import AdminSlider from "@/components/Admin/AdminSliderManagement"
+    import AdminSlider from "@/components/Admin/AdminSliderManagement";
+    import AdminBlog from "@/components/Admin/AdminBlog";
 
 	export default {
 		layout:"admin",
@@ -45,12 +51,23 @@
             AdminVotesCount,
             AdminUpload,
             AdminChat,
-            AdminSlider
+            AdminSlider,
+            AdminBlog
+        },
+        head() {
+            return {
+                script:[
+                    {src:"/js/quill.js"}
+                ],
+                link:[
+                    {rel:"stylesheet", href:"/css/quill.snow.css"}
+                ]
+            }
         },
 		data(){ 
 			return {
-    		    bloqueo: true,
-    		    page: 1,
+    		    bloqueo: false,
+    		    page: 5,
     		}
 		},
         mounted(){

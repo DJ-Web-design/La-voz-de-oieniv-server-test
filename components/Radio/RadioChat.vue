@@ -123,18 +123,12 @@
                 let min = formatofecha.getMinutes();
                 let Fecha = `${d}/${m}/${y} ${h}:${min < 10 ? '0'+min : min}`;
                 if (this.chat.message && this.chat.user) {
-                    this.chatMessages.push({
+                    chatDatabase.push({
                         message: this.chat.message, 
                         user: this.chat.user, 
                         pic: this.chat.pic, 
                         date: Fecha
                     });
-                    /*chatDatabase.push({
-                        message: this.chat.message, 
-                        user: this.chat.user, 
-                        pic: this.chat.pic, 
-                        date: Fecha
-                    });*/
                     this.chat.message = "";
                 } else {
                     alert("El Mensaje No Puede Estar Vacio.");

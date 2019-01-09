@@ -30,7 +30,6 @@
 			</div>
 		</div>
 		<div id="title-count" style="margin:30px 0 10px 0">Subir Video</div>
-		<template v-if="authorized">
 			<div>
 				<label for="title">Titulo:</label>
 				<input type="text" name="title" id="titulo" v-model="videoMeta.title">
@@ -48,10 +47,6 @@
 			<div id="boton">
 				<input type="submit" id="btn-enviar" class="btn-lavoz" value="Subir Video" @click="enviarVideo" />
 			</div>
-		</template>
-		<template v-else>
-			<a :href="authLink">Obtener Acceso</a>
-		</template>
 		<template v-if="showLoad">
 			<div class="cajaexterna">
 				<div class="cajainterna animated">
@@ -77,7 +72,6 @@
 <script>
 	import {imageDatabase, testStorage} from "@/plugins/firebase.js";
 	import {post} from "axios";
-	import config from "@/config/VideoUploadAuth.json";
 
 	export default {
 		mounted(){
@@ -107,10 +101,7 @@
 					title:null,
 					des:null
 				},
-				video:null,
-				authLink:"https://accounts.google.com/o/oauth2/v2/auth?" + Object.entries(config).map(e=>{
-					return e.join("=");
-				}).join("&")
+				video:null
 			}
 		},
 		methods:{

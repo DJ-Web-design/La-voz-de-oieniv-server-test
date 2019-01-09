@@ -24,6 +24,9 @@
 			RadioAside,
 			RadioAdsBanner
 		},
+		mounted() {
+			initializeFB();
+		},
 		head () {
 			let description = "Streaming en vivo de nuestros programas, disfruta de ellos, comparte, pide tus temas favoritos. Aqui, en La Voz de OIENIV.";
 			return {

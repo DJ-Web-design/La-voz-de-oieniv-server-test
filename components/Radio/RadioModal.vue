@@ -36,7 +36,9 @@
                          src="@/assets/spinner.svg" 
                          alt="FB Login Button Loading" 
                         />
-                        <div class="fb-login-button" 
+                        <div 
+                         id="fb-login-button"
+                         class="fb-login-button" 
                          data-max-rows="1" 
                          data-size="large" 
                          data-button-type="continue_with" 
@@ -55,12 +57,10 @@
 		data(){
 			return this.$parent._data
 		},
-        head(){
-            return {
-                script:[
-                    {src:"/js/fb-button.js"}
-                ]
-            }
+        mounted() {
+            let fb = document.getElementById("fb-login-button");
+
+            fb.addEventListener("login",this.login, false);
         },
 		methods:{
 			ingresaNombre() {
@@ -72,8 +72,8 @@
                     localStorage.setItem("pic", this.chat.pic);
                     FB.AppEvent.logEvent("Name Login");
                 }
-            },
-		},
+            }
+		}
 	}
 </script>
 <style scoped>

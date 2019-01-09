@@ -18,7 +18,7 @@
                             target=_blank>
                             <div id="iconFacebook">
                                 <span class="icon-facebook">
-                                    <span>Compartir</span>
+                                    <span class="link">Compartir</span>
                                 </span>
                             </div>
                         </a>
@@ -26,7 +26,7 @@
                             target="_blank">
                             <div id="iconTwitter">
                                 <span class="icon-twitter">
-                                    <span>Twittear</span>
+                                    <span class="link">Twittear</span>
                                 </span>
                             </div>
                         </a>
@@ -114,9 +114,33 @@
 		color: #dbe1ec;
 		font-size: 50px;
 		display: block;
-		margin: 80px auto;
+		margin: 80px auto 40px;
 	}
 	svg {
-		margin: 80px;
+		margin: 80px auto 40px;
+	}
+	a {
+		text-decoration: none;
+	}
+	#iconFacebook, #iconTwitter {
+		font-family: Roboto;
+		border-radius: 5px;
+		margin: 10px auto;
+		padding: 5px 0;
+		color: white;
+		background: rgb(59,89,152);
+		width: 120px;
+	}
+	#iconTwitter {
+		background:rgb(29,161,242);
+	}
+	.link {
+		margin-left: 5px;
+	}
+	@media screen and (min-width: 720px) {
+		#iconFacebook, #iconTwitter {
+			display: inline-block;
+			margin: 10px 10px;
+		}
 	}
 </style>

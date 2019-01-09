@@ -65,7 +65,7 @@
                     this.votos.tres = snap.val().tres.votesCount;
                 });
             } catch(err) {
-                alert("Error al obtener los datos. \nPor favor recargue la pagina.")
+                alert("Error al obtener los datos.\nPor favor recargue la pagina.")
             }
         }
 	}

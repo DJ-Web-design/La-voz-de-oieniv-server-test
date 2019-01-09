@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<MainSlider :slider="slider" :sliderData="sliderData"/>
 		<div class="social-media">
 			<ShareButtonFacebook href="http://www.facebook.com/sharer.php?u=https://www.lavozdeoieniv.tk" />
@@ -9,16 +8,18 @@
 		<MainArticle/>
 		<MainReference/>
 		<MainVotoPanel :votos="votos" :votesLoad="votesLoad"/>
-		<MainSonadoPanel/>
+		<MainSonadoPanel :load="votesLoad" :mayor="mayor"/>
 		<MainSocialMedia/>
 		<MainSocialButtons/>
-		<MainModal 
-		 v-show="viewModal" 
-		 :message="modalMessage" 
-		 :content="modalContent" 
-		 :mode="modalMode"
-		 :vote="vote"
-		/>
+		<transition name="fade" mode="out-in">
+			<MainModal
+			 v-show="viewModal" 
+			 :message="modalMessage" 
+			 :content="modalContent" 
+			 :mode="modalMode"
+			 :vote="vote"
+			/>
+		</transition>
 	</div>
 </template>
 <script>
@@ -48,6 +49,7 @@ export default {
 		MainVotoPanel
 	},
 	async mounted(){
+		initializeFB();
 		var that = this;
 		var slider = [];
 		try {
@@ -68,6 +70,14 @@ export default {
 			votos = snap.val();
 		});
 
+		let mayor = "uno";
+		let arr = ["uno", "dos", "tres"];
+		
+		for(let i = 0; i < arr.length; i++)
+			if (votos[arr[i]].votesCount > votos[mayor].votesCount)
+				mayor = arr[i];
+		
+		this.mayor = votos[mayor];
 		this.votesLoad = false;
 		this.votos = votos;
 	},
@@ -83,11 +93,12 @@ export default {
 			modalMode:undefined,
 			vote:undefined,
 			urlShareFace:undefined,
-			urlShareTwit:undefined
+			urlShareTwit:undefined,
+			mayor:{}
 		}
 	},
-	meta(){
-		let description = "Disfruta de: musica, reflexiones, predicas, y transmisiones en vivo de nuestros programas. Solo por La Voz de OIENIV";
+	head(){
+		let description = "Disfruta de: musica, reflexiones, predicas, y transmisión en vivo de nuestros programas. Solo por La Voz de OIENIV, La radio donde la protagonista es: La Palabra de Dios";
 		return {
 			meta:[
 				{ name:"keywords",  hid:"keywords", content:"musica cristiana online, musica evangelica online, musica cristiana evangelica online de venezuela, radio cristiana de venezuela, emisora cristiana evangelica en linea" },
@@ -98,7 +109,7 @@ export default {
 				{ property:"og:description", content:description},
 				//twitter cards
 				{name:"twitter:description", content:description},
-			],
+			]
 		}
 	}
 }
@@ -106,6 +117,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to, .fade-leave-active {
+  opacity: 0
+}
 .social-media div {
 	float:left;
 	margin-top:10px;

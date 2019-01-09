@@ -119,21 +119,21 @@
         height:240px;
     }
     .img-open{
+        margin-top: 10%;
+    }
+    .img-close {
+        margin-top: 5.5%
+    }
+}
+@media screen and (min-width:960px){
+    .open {
+        height:220px;
+    }
+    .img-open{
         margin-top: 8%;
     }
     .img-close {
-        margin-top: 3.5%
-    }
-}
-@media screen and (min-width:767px){
-    .open {
-        height:200px;
-    }
-    .img-open{
-        margin-top: 3.5%;
-    }
-    .img-close {
-        margin-top: 1.5%
+        margin-top: 5%;
     }
 }
 .boton{

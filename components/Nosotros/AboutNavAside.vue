@@ -9,13 +9,15 @@
 		<div class="separador"></div>
 		<div class="content content-aside">
 			<transition name="fade" mode="out-in">
-				<div 
-				v-for="(iten, index) in tabs"
-				v-if="tab === index+1" 
-				:key="'div'+index">
-					<h2 :key="'h2'+index">{{iten.name}}</h2>
-					<p :key="'p'+index" v-html="iten.des"></p>
-				</div>
+                <template v-for="(iten, index) in tabs">
+				    <div 
+				     v-if="tab === index+1" 
+				     :key="'div'+index"
+                    >
+				    	<h2 :key="'h2'+index">{{iten.name}}</h2>
+				    	<p :key="'p'+index" v-html="iten.des"></p>
+				    </div>
+                </template>
 			</transition>
 		</div>
 	</div>
@@ -29,7 +31,7 @@
         		tabs:[ 
         		    {
         		        name: "Historia",
-        		        des:`Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo necessitatibus dolorum consequatur sed cupiditate nostrummaxime cumque reiciendis totam excepturi ut recusandae, eum optio quis maiores possimus dolorem quod incidunt.<br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, repellendus esse est facere reprehenderit rem vero mollitia numquam vitae accusamus temporibus iste quos, beatae error repellat tempore eveniet ab id!`,
+        		        des:`La Voz de OIENIV nació con una emisora por internet, la cual se encargaba de predicar la palabra por medios digitales, pero un dia Dios nos permitió obtener un transmisor, !Ya eramos una radio FM!.<br/><br/>Con el tiempo y ayuda de varios hermanos fuimos mejorando, como radio y como personas, para poder llevar la Palabra de Dios a mas personas.`,
             		},{
                     	name:"Visión",
                 		des:`<ul style="text-align:left">
@@ -47,7 +49,7 @@
 							</ul>`,
             		},{
                     	name:"Misión",
-                		des:`Crear la emisora de radio online que será la voz de nuestra organización que llamaremos:<br/><span style="text-align:center">\"La voz de OIENIV\".</span><br/>donde participen los entes auxiliares de la organización, departamentos encargados y colaboradores para propagar el evangelio y promover las distintas actividades nacionales, zonales y de cada iglesia en particular.`,
+                		des:`Crear la emisora de radio online que será la voz de nuestra organización que llamaremos:<br/><span style="text-align:center">\"La voz de OIENIV\".</span><br/>Donde participen los entes auxiliares de la organización, departamentos encargados y colaboradores para propagar el evangelio y promover las distintas actividades nacionales, zonales y de cada iglesia en particular.`,
 					},{
                     	name:"Equipo",
                 		des:`<ul>
@@ -65,7 +67,7 @@
             		}
         		]
     		}
-		},
+		}
 	}
 </script>
 <style scoped>
