@@ -56,6 +56,7 @@
                     that.dataIsSend = true;
                     try {
                         let res = await get(`https://lavozdeoieniv.herokuapp.com/login-admin?user=${datos.user}&pass=${datos.pass}`);
+                        console.log(res);
                         if (res.data == "no-auth") {
                             that.noUser = "Usuario o contraseña incorrectos"
                         } else if (res.data == "auth") {

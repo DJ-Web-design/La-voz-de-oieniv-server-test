@@ -1,25 +1,1554 @@
 {
-	"videos":[
-		{
-		  "id":"123",
-		  "title": "Ejemplo De Titulo",
-		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
-		  "thumb": "/assets/user.jpg",
-		  "link": "https://youtu.be/rgtpQDQtJYQ"
-		},
-		{
-		  "id":"231",
-		  "title": "Ejemplo De Titulo Numero 2",
-		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
-		  "thumb": "/assets/user.jpg",
-		  "link": "https://youtu.be/rgtpQDQtJYQ"
-		},
-		{
-		  "id":"42341",
-		  "title": "Ejemplo De Titulo Otra Vez",
-		  "description": "Esta es un pequeño ejemplo de una descripcion del video",
-		  "thumb": "/assets/user.jpg",
-		  "link": "https://youtu.be/rgtpQDQtJYQ"
-		}
-	]
+ "items": [
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/fQovOve28RCjNxq3zLeSKdJuRaY\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "SBQeUxxsIMU"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-11T02:12:44.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Productos raros y sorprendentes del CES 2019",
+    "description": "El CES o Consumer Electronic Show, es una exposición que sucede cada año en las ciudad de las Vegas, en él se muestran los productos que estarán en ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/SBQeUxxsIMU/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/SBQeUxxsIMU/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/SBQeUxxsIMU/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/cUBMXnhiWonaUDBAvM7pDXSAINc\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "8teXym2TnAI"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-10T00:30:01.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Cómo hacer un login con facebook usando firebase | Clase pública de Platzi",
+    "description": "Entra al curso completo de Firebase: https://platzi.com/cursos/firebase-web/ Entra al plan expert de platzi: https://platzi.com/precios Firebase el Backend as a ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/8teXym2TnAI/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/8teXym2TnAI/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/8teXym2TnAI/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/HOom1SaK25aeEj69fM7GKmsQ2s4\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "f_L1oVS7Wzk"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-09T01:46:30.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "La fórmula de la viralidad | PlatziConf",
+    "description": "Entra al Curso de Community Manager: https://platzi.com/cursos/community-manager/ Mira todas las conferencias de PlatziConf Bogotá: https://platzi.com/conf ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/f_L1oVS7Wzk/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/f_L1oVS7Wzk/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/f_L1oVS7Wzk/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/i5CXZ9h5xd2EsdFvaOreVBvtQxQ\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "n0qSZHQrAek"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-08T00:30:00.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Cómo instalar y configurar un tema premium de BeTheme para WordPress",
+    "description": "Fortalece tu presencia en internet con el Curso de Creación y Optimización de Sitios Web con WordPress de Platzi. Entra a https://platzi.com/wp Si estás ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/n0qSZHQrAek/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/n0qSZHQrAek/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/n0qSZHQrAek/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/PwWUj1_EKhzfh2HytFipmoi2KKo\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "YyUjqMzKWD8"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-07T00:28:19.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Cómo aprender lo que sea y crear equipos imparables | PlatziConf",
+    "description": "Lee más de esta conferencia en nuestro Blog: https://platzi.com/blog/como-aprender-lo-que-sea-y-crear-equipos-imparables/ La curva de aprendizaje de ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/YyUjqMzKWD8/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/YyUjqMzKWD8/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/YyUjqMzKWD8/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/n0jgRiQjyCs2niaqlc-UWahdFag\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "iezF5Ndj-aM"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-05T00:28:13.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "China aluniza un satélite  y Microsoft regresa a la cima | CvanderNews",
+    "description": "Estas son las noticas más relevantes del mundo de la tecnología en la primera semana del año. 1. Predicciones para Bitcoin y Ethereum de Arjum Balaji ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/iezF5Ndj-aM/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/iezF5Ndj-aM/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/iezF5Ndj-aM/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/Bzalr1xQTUhFnvcMW8xkDwKBCJc\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "6MaAYuBsjXY"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-04T01:28:44.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Mentiras que te enseñaron en la escuela y que aún crees | PlatziLive",
+    "description": "Descubre cuándo será el próximo PlatziLive: https://platzi.com/agenda/ ¿Quieres saber si Platzi vale la pena?: https://platzi.com/impacto/ En este video Freddy ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/6MaAYuBsjXY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/6MaAYuBsjXY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/6MaAYuBsjXY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/5opS7tQfp7qhjmogE05kp65ID_g\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "hQgvt-s-AHQ"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-03T00:30:00.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "¿Qué es Docker? | Clase pública del curso de Docker",
+    "description": "Aprende todo lo que necesitas saber sobre Docker en el curso que Platzi tiene para ti en: http://platzi.com/docker En esta clase el Profesor Guido Vilariño nos ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/hQgvt-s-AHQ/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/hQgvt-s-AHQ/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/hQgvt-s-AHQ/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/qOUAtTnJVOvAwe4S4dJfv_zQG_Q\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "y-IArbBsjXo"
+   },
+   "snippet": {
+    "publishedAt": "2019-01-01T01:36:39.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "CvanderNews Edición especial de 2018",
+    "description": "Facebook. - El peor año de la empresa - Cambridge Analyitica - Privacidad - Se fueron ejecutivos de Whatsapp, IG y Oculus - Falta de creencia en la empresa ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/y-IArbBsjXo/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/y-IArbBsjXo/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/y-IArbBsjXo/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/AWKUyLt4URZtmP8k2fHPtVuBuvc\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "xWkuN5wnlfY"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-29T23:57:43.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Detrás de cámaras en Platzi | Bloopers 2018",
+    "description": "En Platzi hacemos mucho video, entre ellos cursos, PlatziLive, tutoriales, entrevistas y esto nos hace propensos a comenter mucho errores, algunos de ellos, ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/xWkuN5wnlfY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/xWkuN5wnlfY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/xWkuN5wnlfY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/lxNsy8jhjgHSoUf_D8AIuhj-8Vk\"",
+   "id": {
+    "kind": "youtube#playlist",
+    "playlistId": "PLa28R7QEiMbnZk-KAfzIfW9uEizDqY6Io"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-29T20:02:05.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Bloopers",
+    "description": "",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/xWkuN5wnlfY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/xWkuN5wnlfY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/xWkuN5wnlfY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/5ppH4Bmwg1YkXStbUwgMF2FKvv0\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "FlOLc2DaSTo"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-28T03:08:10.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Lenguajes y tecnologías más rentables para 2019 | PlatziLive",
+    "description": "Los más 200 cursos disponibles en una suscripción: https://platzi.com/precios Lista de cursos Curso de Oratoria y Hablar en Público: https://platzi.com/publico ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/FlOLc2DaSTo/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/FlOLc2DaSTo/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/FlOLc2DaSTo/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/TE44jp3jjjQRFFd5NYLcsxsOR7Q\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "14ORlUCJhm4"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-27T01:32:54.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Flutter: la nueva forma de desarrollar Apps móviles | En 32 segundos",
+    "description": "Lanzamiento del curso: https://platzi.com/cursos/flutter/ Adquiere la suscripción de Platzi por un año: http://platzi.com/expert/ Flutter es el framework de Google ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/14ORlUCJhm4/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/14ORlUCJhm4/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/14ORlUCJhm4/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/5FAqOMfmygV7XYHo4-IX_WYiHVY\"",
+   "id": {
+    "kind": "youtube#playlist",
+    "playlistId": "PLa28R7QEiMbm3GkzXhK9C-g7Jzqa4jTgb"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-27T01:07:29.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "la Playlist de desarrollo móvil",
+    "description": "",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/6MfO1uU8Avk/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/6MfO1uU8Avk/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/6MfO1uU8Avk/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/xBciyaZO-dN--Lm7K4Bq3Y63ss0\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "XCYUwCmfcFo"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-22T01:21:39.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Facebook dejó que Spotify y Netflix leyeran tus mensajes privados | Cvander News",
+    "description": "Suscríte a los cursos de Platzi con esta promoción de Navidad: https://platzi.com/navidad/ Mira el artículo completo en el Blog: ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/XCYUwCmfcFo/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/XCYUwCmfcFo/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/XCYUwCmfcFo/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/ipzYEr37iQuPUjPWkSKxSo1frbs\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "h9IK0mtfBLA"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-21T04:36:07.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "10 errores graves en entrevistas de trabajo o al buscar empleo | PlatziLive",
+    "description": "Te respondemos todas tus dudas por WhatsApp: http://platzi.com/whatsapp Aprovecha el descuento de Navidad #RegalaConocimiento: ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/h9IK0mtfBLA/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/h9IK0mtfBLA/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/h9IK0mtfBLA/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/68Jfr-MhTwH3V2BD3JUvBHbmVl8\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "gfw9XxRQGa4"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-20T00:49:28.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Cómo se crean los videojuegos | Cursos Platzi",
+    "description": "Entra a la carrera de videojuegos: https://platzi.com/cursos/testing-videojuegos/ ¿Conoces todos las áreas involucradas en hacer un videojuego independiente?",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/gfw9XxRQGa4/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/gfw9XxRQGa4/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/gfw9XxRQGa4/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/Tl6IUS_ar1x3f_KKzjbeKsxi3xo\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "icswdA7LAzA"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-19T00:57:44.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Emprender en tech y estudiar online siendo adolescente | PlatziConf",
+    "description": "Aprovecha la venta de navidad en Platzi: https://platzi.com/navidad/ Conoce la historia de Samuel: https://www.youtube.com/watch?v=yQTClNDzrhQ Con más ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/icswdA7LAzA/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/icswdA7LAzA/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/icswdA7LAzA/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/0duFoItke__u2TS9gEBuVZjU9rc\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "NiFJnB25BDE"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-18T02:12:44.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "\"Donar sangre no duele, duele necesitarla y no tenerla\" Entrevista a Blooders",
+    "description": "Promoción de Navidad: http://platzi.com/navidad Conoce más acerca de Blooders aquí: https://blooders.org/ Lee acerca de los mitos de donar sangre: ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/NiFJnB25BDE/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/NiFJnB25BDE/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/NiFJnB25BDE/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/g-oL54xBf8Pg8UbqgaZ2S1x-Agg\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "9l48Q_4zfNU"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-15T02:47:45.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Comienza el Guadalupe - Reyes, Doom cumple 20 años y Youtube Rewind fracasó | CvanderNews",
+    "description": "Arrancan festividades de Guadalupe Reyes Rewind del 2018 de Youtube no está alineado a su comunidad ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/9l48Q_4zfNU/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/9l48Q_4zfNU/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/9l48Q_4zfNU/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/9r620xvTYVc1h5EV4GdZMrBR4WQ\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "t2HOxl_KHLY"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-14T02:27:45.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Regalos no inútiles para geeks en Reyes | PlatziLive",
+    "description": "Esta navidad regala conocimiento en : platzi.com/navidad Hacer el regalo perfecto para nuestra geek o nuestro geek especial puede ser complicado sino sabes ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/t2HOxl_KHLY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/t2HOxl_KHLY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/t2HOxl_KHLY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/H7dcdHDsqKsxYo08FBuv-Iy8n9I\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "Mi_sRAfs7TE"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-13T00:43:19.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Qué es la programación Orientada a Objetos: Curso de programación",
+    "description": "Suscríbete a a más de 200 cursos y estudia cuando quieras con cursos profesionales en: https://platzi.com/precios/ Gracias a la programación orientada a ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/Mi_sRAfs7TE/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/Mi_sRAfs7TE/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/Mi_sRAfs7TE/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/yodAGCLa1RwxPNWCQr7A1lBdspU\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "vsQDrC6XkKk"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-09T00:28:37.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "La importancia de un Curriculum Vitae para puestos de ventas | Entrevista a ListoPro",
+    "description": "RegalaConocimiento con la venta de Navidad en Platzi: https://platzi.com/navidad/ Link para registrarte en ListoPro: https://listopro.com.mx/ Ventas y ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/vsQDrC6XkKk/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/vsQDrC6XkKk/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/vsQDrC6XkKk/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/4k7hO_EJcm_qh7U1HHuIybFJGmg\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "9o6B8CSIEsw"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-07T23:58:17.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Taxis autónomos ya operan en USA y No más p0rn en Tumblr | CvanderNews",
+    "description": "Estas son las noticias más relevantes de la semana en el mundo de la tecnología. Data breach de Marriot afecta 500 millones de huéspedes ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/9o6B8CSIEsw/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/9o6B8CSIEsw/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/9o6B8CSIEsw/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/qDzu16LB_I7j80z2LQetMRnThD0\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "Pfyuv5ZnNNw"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-07T02:45:29.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Qué son tablas de verdad y compuertas lógicas | PlatziLive",
+    "description": "Entra al curso de fundamentos de ingeniería de Software aquí: https://platzi.com/fundamentos En este video Freddy te explica cómo funcionan las tablas de ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/Pfyuv5ZnNNw/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/Pfyuv5ZnNNw/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/Pfyuv5ZnNNw/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/tCM0nWXtu0qkFDtA_TblF8NuRGE\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "trolc7sQGFs"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-05T01:00:03.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Mitos y realidades del diseño | PlatziConf",
+    "description": "Entra aquí a la carrera de diseño en Platzi: https://platzi.com/categorias/diseno/ Lee más acerca de los 5 mitos en el diseño de producto en nuestro Blog: ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/trolc7sQGFs/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/trolc7sQGFs/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/trolc7sQGFs/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/pSsI_CPqGDa7BFcehjtsxNfpcTs\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "0kSDQsLAzew"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-04T00:43:36.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Crea tu primer widget con Flutter | TUTORIAL de Flutter",
+    "description": "Entra aquí al curso: https://platzi.com/cursos/flutter/ ---Post en el Blog de Platzi: https://platzi.com/blog/tutorial-flutter-android-material-design/ En este video Anahí ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/0kSDQsLAzew/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/0kSDQsLAzew/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/0kSDQsLAzew/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/aMLL0-uJ_fAB-lwL3vtpubNerPE\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "h2VO7abzU18"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-03T01:57:34.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Uso incorrecto de la coma: la coma criminal | Curso de ortografía",
+    "description": "Entra aquí al curso completo aquí: https://platzi.com/cursos/ortografia-basica/ Las pausas que hacemos durante la lectura de textos no siempre implican agregar ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/h2VO7abzU18/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/h2VO7abzU18/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/h2VO7abzU18/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/HzKBszsYfjPgbpz0SD-QfBhJLQQ\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "g-729Lep15s"
+   },
+   "snippet": {
+    "publishedAt": "2018-12-01T01:41:06.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "YouTube lanza historias e Instagram eliminará cuentas falsas | PlatziNews",
+    "description": "Estás son las noticias más relevantes del mundo de la tecnología: - Project Fi de Google llega al iPhone ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/g-729Lep15s/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/g-729Lep15s/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/g-729Lep15s/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/2H_VoX36w0XKhjPOECyU_DVzAdQ\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "YJ0u-MpYpM4"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-30T03:00:24.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "10 errores comunes de programadores junior | PlatziLive",
+    "description": "Respondemos tus dudas la suscripción a Platzi por WhatsApp: http://platzi.com/whatsapp *Aprovecha el precio especial de Navidad* Cuando cuesta Platzi ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/YJ0u-MpYpM4/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/YJ0u-MpYpM4/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/YJ0u-MpYpM4/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/9l61nlqS7EiPDiz72ZNmVRgqZAg\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "m80fTCC318w"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-29T00:46:27.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "¿Qué es una ICO o Initial Coin Offering? | Cursos en Platzi",
+    "description": "Entra ahora al curso: http://platzi.com/ico En el curso de ICO de platzi platzi.com/ico veremos todo lo que necesitas saber sobre esta nueva forma de ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/m80fTCC318w/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/m80fTCC318w/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/m80fTCC318w/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/BnRGlPmREs2cutyVlDhCbXSjAko\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "nvZv6DiX28k"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-28T00:43:32.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Un buen líder de ingeniería: Poder, autoridad e influencia | PlatziConf",
+    "description": "Aprende a liderar equipo es: https://platzi.com/cursos/liderazgo-equipos/ Ser líder es más que ocupar un cargo ejecutivo, ser líder es tener libertad y saber ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/nvZv6DiX28k/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/nvZv6DiX28k/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/nvZv6DiX28k/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/CVq8iIgP1e3ku2xYgn_rQrUE8YI\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "2Un_1HdlzeQ"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-27T00:43:38.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Cómo obtener capital inicial o semilla para tu startup | Entrevista a 500 startups",
+    "description": "Atento a la convocatoriá en este enlace: https://latam.500.co/latam/ Aprende cómo puedes formar parte de la aceleradora 500 startups, cuáles son los requicitos ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/2Un_1HdlzeQ/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/2Un_1HdlzeQ/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/2Un_1HdlzeQ/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/ZF2JMnL17jw_Wzm7Ofkl5nhW_Gc\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "se_ZA4YjQ1M"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-24T23:13:57.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "iFood levanta la ronda de inversión más grande en LATAM con 500M | PlatziNews",
+    "description": "Estas son las noticias más importantes de la semana en e mundo de la tecnología: -iFood levanta 500 millones de dólares en lo que se considera la ronda de ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/se_ZA4YjQ1M/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/se_ZA4YjQ1M/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/se_ZA4YjQ1M/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/LigMYQ_Q25l-yDq4EQWg66yDsYI\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "xHQ1tupbNv8"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-24T02:56:17.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Tendencias de Javascript para el 2019",
+    "description": "Respondemos tus dudas la suscripción a Platzi por WhatsApp: http://platzi.com/whatsapp *Aprovecha el precio especial de Navidad* Domina el lenguaje de ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/xHQ1tupbNv8/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/xHQ1tupbNv8/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/xHQ1tupbNv8/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/_Tg6g_1BcBXKRg3anA_XMCm0g9w\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "S8K13inc6Uk"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-22T23:00:02.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Gastar en cosas o invertir en habilidades | Platzi Black Friday",
+    "description": "https://platzi.com/blackfriday/ Este 23 de noviembre tendrás la oportunidad de avanzar en tu carrera profesional.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/S8K13inc6Uk/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/S8K13inc6Uk/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/S8K13inc6Uk/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/AW-h9itBrGV6VKWft93TN6ujWnI\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "ExsGyZDBlJQ"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-18T02:11:08.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "La ruta de aprendizaje de un desarrollador web profesional | PlatziLive",
+    "description": "Respondemos tus dudas la suscripción a Platzi por WhatsApp: http://platzi.com/whatsapp *Aprovecha el precio especial de Navidad* - - - Explicación de HTML: ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/ExsGyZDBlJQ/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/ExsGyZDBlJQ/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/ExsGyZDBlJQ/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/Q6FisEOOtbxWEoAA_XeiPDmZNLs\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "s3mq8hxuMOU"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-17T01:28:32.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Netflix prueba versión más barata y Youtube premium llega a Sudamerica | PlatziNews",
+    "description": "Estas son las noticias más importantes de la semana: Netflix lanzará una versión para móviles con descuento https://goo.gl/Xqtwsc 50 entrevistas del NY Times ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/s3mq8hxuMOU/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/s3mq8hxuMOU/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/s3mq8hxuMOU/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/tb7ozF1yTLG1e0MqOZYc-5MP7rE\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "8abDwXRkStw"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-16T02:53:06.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Cómo liderar a un equipo y medir objetivos con OKRs | PlatziConf",
+    "description": "Entra hoy al curso de liderazgo, disponible con tu suscripción a Platzi: https://platzi.com/cursos/liderazgo-equipos/ En esta conferencia Nicole Chapaval nos ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/8abDwXRkStw/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/8abDwXRkStw/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/8abDwXRkStw/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/oMfrJvyM_ClwysXMkUI_Tvyjk6M\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "1OLUDLqLEBE"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-15T01:28:31.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Chévere emprender un negocio, pero escuchen mis fracasos | Mauricio Hoyos | PlatziConf",
+    "description": "Aprende cómo crear tu propia startup en: http://platzi.com/startups Mauricio Hoyos nos cuenta los fracasos que hay detrás de un reconocido éxito empresarial ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/1OLUDLqLEBE/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/1OLUDLqLEBE/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/1OLUDLqLEBE/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/Nn8vSeDpQWhpubpa4snPZMDDw5A\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "NeRZaSUHuZo"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-13T15:26:50.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "El Internet que amamos se corrompe y lo podemos perder | PlatziConf",
+    "description": "Estos fueron los anuncios más importantes en la CONF: https://platzi.com/blog/estos-son-los-anuncios-mas-importantes-de-platzi-en-platziconf/ En esta ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/NeRZaSUHuZo/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/NeRZaSUHuZo/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/NeRZaSUHuZo/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/EuIMnb1sXmwP5ke0Z2MByGNYMa0\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "RKqh_o3RXoY"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-11T14:28:21.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "El Estado de Platzi 2018 | PlatziConf",
+    "description": "Respondemos tus dudas la suscripción a Platzi por WhatsApp: http://platzi.com/whatsapp *Aprovecha el precio especial de Navidad* PlatziConf en Bogotá fue ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/RKqh_o3RXoY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/RKqh_o3RXoY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/RKqh_o3RXoY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/sIduN-BEGhKFGabyaFBJQMTjhPw\"",
+   "id": {
+    "kind": "youtube#playlist",
+    "playlistId": "PLa28R7QEiMbkh2yMtZwwVXVt6ZE5kVX0o"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-11T02:13:14.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "PlatziConf Bogotá 2018",
+    "description": "",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/RKqh_o3RXoY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/RKqh_o3RXoY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/RKqh_o3RXoY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/cfIzNNgwRuAcWiexzbYHpH0b2f4\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "pDQvR8XHtkk"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-10T03:05:47.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "La ética de un coche autónomo y Alexa de Amazon llega a México | | PlatziNews",
+    "description": "Estas son las noticas más importantes de la semana: Samsung quiere producir masivamente teléfonos flexibles ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/pDQvR8XHtkk/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/pDQvR8XHtkk/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/pDQvR8XHtkk/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/PVc8FrtTxlza-TbJ9ObXi8aB-Cg\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "pkMr0bp9djk"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-09T02:30:01.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Finanzas personales para freelancers con Sofía Macías | Entrevista",
+    "description": "Entra aquí para particpar por las agendas: https://www.youtube.com/watch?v=1oLNxRixF2s La autora y asesora de finanzas Sofía Macías te enseña como ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/pkMr0bp9djk/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/pkMr0bp9djk/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/pkMr0bp9djk/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/f1MaR7JMmcNzcive80jA48D2q9s\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "vDw3XuBDJ8E"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-08T00:43:17.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Community Manager y Social Media Manager: ¿cuál es la diferencia?",
+    "description": "Entra ahora al curso: https://platzi.com/clases/marketing-redes/ Trazar una estrategia de marketing en redes sociales requiere entender las necesidades de la ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/vDw3XuBDJ8E/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/vDw3XuBDJ8E/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/vDw3XuBDJ8E/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/iSf6nP9IprW9CzoiYzpGjExZ7Nk\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "1FrZHX7mjhU"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-07T01:43:35.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "¿Qué es un byte? | En 32 segundos | Fundamentos de Ingeniería de Software",
+    "description": "Entra al curso de fundamentos aquí: https://platzi.com/cursos/ingenieria/ Comienza tu carrera en techo mejora aprendiendo las bases de la ingeniería de ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/1FrZHX7mjhU/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/1FrZHX7mjhU/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/1FrZHX7mjhU/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/80SfmmeqUA8qCVtDzmGxF1AZUgQ\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "beAeGdHMZ3M"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-06T01:28:25.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Qué habilidades necesitas para trabajar en Microsoft más allá de C# y Net | Entrevista",
+    "description": "Estos son los cursos que hemos grabado con Juan Carlos: Curso de Azure: https://platzi.com/azure Curso Profesional de C# y ASP.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/beAeGdHMZ3M/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/beAeGdHMZ3M/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/beAeGdHMZ3M/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/LEXBhxpMt1-ezbUhJUCquX0NqQ4\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "eKcCthkvxXY"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-03T01:28:40.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Bitcoin cumple 10 años | PlatziNews",
+    "description": "Estas son las noticas tech más importantes de la semana: IBM adquiere a Red Hat por 34 mil millones ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/eKcCthkvxXY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/eKcCthkvxXY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/eKcCthkvxXY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  },
+  {
+   "kind": "youtube#searchResult",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/zxoNKDdWa249s5Q5VEERGoq21K8\"",
+   "id": {
+    "kind": "youtube#video",
+    "videoId": "6MfO1uU8Avk"
+   },
+   "snippet": {
+    "publishedAt": "2018-11-02T17:56:04.000Z",
+    "channelId": "UC55-mxUj5Nj3niXFReG44OQ",
+    "title": "Cómo crear tu primera app | PlatziLive",
+    "description": "Respondemos tus dudas la suscripción a Platzi por WhatsApp: http://platzi.com/whatsapp *Aprovecha el precio especial de Navidad* Más allá del hacer una ...",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/6MfO1uU8Avk/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/6MfO1uU8Avk/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/6MfO1uU8Avk/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    }
+   }
+  }
+ ]
 }

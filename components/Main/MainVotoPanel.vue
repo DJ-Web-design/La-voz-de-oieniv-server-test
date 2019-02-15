@@ -98,25 +98,24 @@
 				type:Object
 			}
 		},
-		updated(){
-			if (
-				localStorage.getItem("voto") !== this.votos.uno.voto &&
-				localStorage.getItem("voto") !== this.votos.dos.voto &&
-				localStorage.getItem("voto") !== this.votos.tres.voto
-			) {
-				localStorage.removeItem("voto");
+		async mounted(){
+			try {
+				await votesDatabase.once("value",snap=>{
+					this.votesCounter.uno = snap.val().uno.votesCount;
+					this.votesCounter.dos = snap.val().dos.votesCount;
+					this.votesCounter.tres = snap.val().tres.votesCount;
+				});
+			} catch(err) {
+				alert("Error al obtener datos, ¡Recargue la pagina!");
 			}
-
-			votesDatabase.once("value",snap=>{
-					this.votesCounter.uno = snap.val().uno.votesCount;
-					this.votesCounter.dos = snap.val().dos.votesCount;
-					this.votesCounter.tres = snap.val().tres.votesCount;
-			})
 			votesDatabase.on("child_changed",snap=>{
-					this.votesCounter.uno = snap.val().uno.votesCount;
-					this.votesCounter.dos = snap.val().dos.votesCount;
-					this.votesCounter.tres = snap.val().tres.votesCount;
-			})
+				this.votesCounter.uno = snap.val().uno.votesCount;
+				this.votesCounter.dos = snap.val().dos.votesCount;
+				this.votesCounter.tres = snap.val().tres.votesCount;
+			});
+		},
+		destroyed() {
+			votesDatabase.off("child_changed");
 		},
 		data(){
 			return {
@@ -383,9 +382,6 @@ overflow: hidden;
  }
 }
 @media screen and (min-width:950px) {
-
- .vota {
- }
  .separador {
 	width:100%;
 	height:10px;

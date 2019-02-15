@@ -28,11 +28,13 @@
                     </ul>
                 </nav>
             </header>
-            <AdminVotesCount v-if="page === 1"/>
-            <AdminUpload v-else-if="page === 2"/>
-            <AdminChat v-else-if="page === 3"/>
-            <AdminSlider v-else-if="page === 4"/>
-            <AdminBlog v-else-if="page === 5"/>
+            <div id="body">
+                <AdminVotesCount v-if="page === 1"/>
+                <AdminUpload v-else-if="page === 2"/>
+                <AdminChat v-else-if="page === 3"/>
+                <AdminSlider v-else-if="page === 4"/>
+                <AdminBlog v-else-if="page === 5"/>
+            </div>
         </template>
     </div>
 </template>
@@ -67,7 +69,7 @@
 		data(){ 
 			return {
     		    bloqueo: false,
-    		    page: 5,
+    		    page: 1,
     		}
 		},
         mounted(){
@@ -80,23 +82,28 @@
 <style scoped>
 /*Menu*/
 nav#menu{
-   width: 100%;
-   height: 80px;
+   width: 30%;
+   height: 100%;
    background: #4B7FE8;
+   position: fixed;
+   top: 0;
 }
 nav#menu ul{
-    float: right;
     overflow: hidden;
 }
 nav#menu ul li{
     color: #f7f7f7;
     cursor: pointer;
-    display: inline-block;
+    display: block;
     background: rgb(51, 95, 182);
     padding-top: 26px;
     padding-left: 30px;
     padding-right: 30px;
-    text-align: right;
+    text-align: center;
+}
+#body {
+    width: 70%;
+    float: right;
 }
 .active{
     padding-bottom:26px;

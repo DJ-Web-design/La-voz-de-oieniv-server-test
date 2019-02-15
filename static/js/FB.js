@@ -17,7 +17,7 @@ function FBLogin() {
         component.chat.pic = res.data.url;
         localStorage.setItem("pic", res.data.url);
     });
-    console.log("Logged")
+    console.log("Logged");
     FB.AppEvents.logEvent("Facebook Login");
 
     component.show = false;

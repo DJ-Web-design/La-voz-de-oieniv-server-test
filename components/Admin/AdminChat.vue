@@ -62,6 +62,9 @@
         	    });
         	});
 		},
+		destroyed() {
+			chatDatabase.off("value");
+		},
 		methods:{
 			borrarRegistros(key) {
 		        if (confirm("¿Seguro que deseas borrar esos registros?")) {

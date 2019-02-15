@@ -80,6 +80,14 @@ export default {
 		this.mayor = votos[mayor];
 		this.votesLoad = false;
 		this.votos = votos;
+		
+		if (
+			localStorage.getItem("voto") !== votos.uno.voto &&
+			localStorage.getItem("voto") !== votos.dos.voto &&
+			localStorage.getItem("voto") !== votos.tres.voto
+		) {
+			localStorage.removeItem("voto");
+		}
 	},
 	data(){
 		return {

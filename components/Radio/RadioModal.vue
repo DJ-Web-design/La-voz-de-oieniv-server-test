@@ -57,11 +57,6 @@
 		data(){
 			return this.$parent._data
 		},
-        mounted() {
-            let fb = document.getElementById("fb-login-button");
-
-            fb.addEventListener("login",this.login, false);
-        },
 		methods:{
 			ingresaNombre() {
                 this.chat.pic = "http://placehold.it/50/55C1E7/fff&text=U";

@@ -40,7 +40,6 @@
 					{name:"twitter:description", content:description}
 				],
 				script: [
-    				{ src:"https://www.paypalobjects.com/api/checkout.js" },
     				{ src:"/js/paypal-button.js"}
     			]
 			}

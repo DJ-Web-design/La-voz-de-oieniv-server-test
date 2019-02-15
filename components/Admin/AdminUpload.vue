@@ -74,15 +74,6 @@
 	import {post} from "axios";
 
 	export default {
-		mounted(){
-			if (this.$route.query["@cc355_1D"] && this.$route.query["@cc355_1D"] === "@mn1r1s_@1l3th") {
-				this.authorized = true;
-				this.access_token = this.$route.query.access_token;
-				this.refresh_token = this.$route.query.refresh_token;
-			} else {
-				this.authorized = false;
-			}
-		},
 		data(){
 			return {
 				refresh_token:undefined,

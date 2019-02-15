@@ -29,9 +29,8 @@
 				<p>Error al obtener los datos, por favor recargue la pagina</p>
 			</template>
 			<template v-else-if="sliderData === 'load'">
-				<img src="../../assets/spinner.svg" id="sliderSpinner">
+				<img src="@/assets/Loading-white.svg" id="sliderSpinner">
 			</template>
-
 			<div class="right-arrow arrow">
 				<span @click="sliderNo++; clear()">&gt;</span>
 			</div>

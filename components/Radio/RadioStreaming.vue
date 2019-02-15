@@ -4,7 +4,6 @@
     </div>
 </template>
 <script>
-
 	export default {
 		data:function(){
 			return {
@@ -13,7 +12,7 @@
 		},
         mounted() {
             this.clientWidth = document.body.clientWidth;
-        },
+        }
 	}
 </script>
 <style scoped>

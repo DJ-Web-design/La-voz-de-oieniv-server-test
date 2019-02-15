@@ -18,6 +18,7 @@ module.exports = {
 			{name:"twitter:site", content:"@lavozdeoieniv"},
 		],
 		script:[
+    		{ src:"https://www.paypalobjects.com/api/checkout.js" },
 			{src:"/js/FB.js"}
 		],
 		link: [

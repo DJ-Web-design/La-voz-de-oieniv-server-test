@@ -112,6 +112,9 @@
                 })
             })
         },
+        destroyed() {
+            chatDatabase.off("value");
+        },
 		methods:{
             sendMessage(e) {
                 e.preventDefault(); 

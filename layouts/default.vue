@@ -3,17 +3,20 @@
     <div id="fb-root"></div>
     <BaseMenu/>
     <nuxt/>
+    <Player/>
     <BaseFooter/>
   </div>
 </template>
 <script>
   import BaseMenu from "~/components/BaseMenu";
   import BaseFooter from "~/components/BaseFooter";
+  import Player from "~/components/Widgets/RadioPlayer";
 
   export default {
     components:{
       BaseMenu,
-      BaseFooter
+      BaseFooter,
+      Player
     },
     mounted(){
       /* Inject Twitter Script*/

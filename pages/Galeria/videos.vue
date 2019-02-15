@@ -7,9 +7,9 @@
 					<ul>
 						<li v-for="(iten, index) in videos" :key="'videoLi '+index">
 							<nuxt-link
-								:to="'/Galeria/videos#'+iten.id"
-								:key="'iten.title '+index">
-								{{ iten.title }}
+								:to="'/Galeria/videos#'+iten.id.videoId"
+								:key="'iten.snippet.title '+index">
+								{{ iten.snippet.title }}
 							</nuxt-link>
 						</li>
 					</ul>
@@ -20,11 +20,11 @@
 							<template v-for="(iten, value) in videos">
 							<VideosLink
 								v-if="value+1 <= vistos"
-								:title="iten.title"
-								:linkTitle="setLink(iten.title)"
-								:description="iten.description"
-								:thumb="iten.thumb"
-								:link="iten.link"
+								:title="iten.snippet.title"
+								:linkTitle="setLink(iten.snippet.title)"
+								:description="iten.snippet.description"
+								:thumb="iten.snippet.thumbnails.medium.url"
+								:link="'https://www.youtube.com/watch?v='+iten.id.videoId"
 								:key="value"
 							/>
 							</template>
@@ -62,25 +62,25 @@ export default {
 		VideosMissing
 	},
 	created(){
-
 		if (this.$route.hash) {
 			this.bindedData = this.videos.filter(e=>{
 				if (e.id === this.$route.hash.slice(1)) return e;
 			})[0]
 		}
-		if (this.videos.length <= 10) {
-			this.showSeeMoreButton = false;
-		}
 	},
 	mounted(){
 		initializeFB();
-		let videos = this.videos;
-		videoDatabase.once("value", e=>{
+		this.videosData = []//videos.items;
+		if (this.videos.length <= 10) {
+			this.showSeeMoreButton = false;
+		}
+		/*let videos = this.videos;
+		await videoDatabase.once("value", e => {
 			videos = [];
 			e.forEach(snap=>{
 				videos.push(snap.val());
 			})
-		});
+		});*/
 	},
 	updated(){
 		if (this.$route.hash) {
@@ -91,7 +91,7 @@ export default {
 	},
 	data(){
 		return { 
-			videos:[],
+			videosData:[],
 			vistos:10,
 			showSeeMoreButton: true,
 			bindedData:{}
@@ -104,7 +104,6 @@ export default {
 			}
 		},
 		vistos(e){
-			console.log(e, this.videos.length)
 			if (e >= this.videos.length) {
 				this.showSeeMoreButton = false
 			}
@@ -130,6 +129,11 @@ export default {
 			}
 			return title;
 		},
+		videos() {
+			return this.videosData.filter(e => {
+				return e.id.kind === "youtube#video"
+			})
+		}
 	},
 	head () {
 		let data;

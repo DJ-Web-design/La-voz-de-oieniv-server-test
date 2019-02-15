@@ -1,33 +1,14 @@
 <template>
 	<div>
 		<div id="title-count">Conteo de votos</div>
-		<div class="nombre-voto">
-		    <span>{{votouno}}</span>
-		</div>
-		<div class="nombre-voto">
-		    <span>{{votodos}}</span>
-		</div>
-		<div class="nombre-voto">
-		    <span>{{vototres}}</span>
-		</div>
-		<div class="cuenta-voto">
-		    <template v-if="spin">
-		        <img src="@/assets/spinner.svg" alt="" class="spinner" />
-		    </template>
-		    <span v-else>{{ votos.uno }}</span>
-		</div>
-		<div class="cuenta-voto">
-		    <template v-if="spin">
-		        <img src="@/assets/spinner.svg" alt="" class="spinner" />
-		    </template>
-		    <span v-else>{{ votos.dos }}</span>
-		</div>
-		<div class="cuenta-voto">
-		    <template v-if="spin">
-		        <img src="@/assets/spinner.svg" alt="" class="spinner" />
-		    </template>
-		    <span v-else>{{ votos.tres }}</span>
-		</div>
+        <template v-if="!loading">
+            <canvas id="canvas">
+                Tu navegador no soporta Canvas
+            </canvas>
+        </template>
+        <template v-else>
+            <span>Loading...</span>
+        </template>
         <VotesEditor/>
 	</div>
 </template>
@@ -40,32 +21,86 @@
         },
 		data(){
 			return {
-				spin: false,
-                titleVotes:[],
-                votos:{
-                    uno:0,
-                    dos:0,
-                    tres:0
-                },
-                votouno:"",
-                votodos:"",
-                vototres:"",
+                loading:true
 			}
 		},
         async mounted(){
+            
             try {
                 await votesDatabase.once("value", snap=>{
-                    this.votouno = snap.val().uno.voto
-                    this.votodos = snap.val().dos.voto
-                    this.vototres = snap.val().tres.voto
+                    this.renderChart(snap.val());
+                    this.loading = false;
                 });
                 votesDatabase.on("child_changed", snap=>{
-                    this.votos.uno = snap.val().uno.votesCount;
-                    this.votos.dos = snap.val().dos.votesCount;
-                    this.votos.tres = snap.val().tres.votesCount;
+                    this.renderChart(snap.val());
                 });
             } catch(err) {
-                alert("Error al obtener los datos.\nPor favor recargue la pagina.")
+                alert("Error al obtener los datos.\nPor favor recargue la pagina.");
+            }
+        },
+        destroyed() {
+            votesDatabase.off("child_changed");
+        },
+        methods: {
+            renderChart(vote) {
+                let max = 0;
+                let votes = [vote.uno, vote.dos, vote.tres];
+                votes.forEach(vote=> {
+                    while(vote.votesCount > max) {
+                        max + 10;
+                    }
+                });
+                let ctx = document.getElementById("canvas").getContext("2d");
+                let chart = new Chart(ctx, {
+                    type:"bar",
+                    data:{
+                        labels: votes.map(v=>v.voto),
+                        datasets: [{
+                            label:"Número de Votos",
+                            backgroundColor: "rgba(151,249,190,0.5)",
+                            borderColor: "rgba(255,255,255,1)",
+                            data: votes.map(v=>v.votesCount),
+                            scaleFontSize : 13,
+                            scaleFontColor : "#ffa45e"
+                        }]
+                    },
+                    options:{
+                        scales: {
+                            xAxes: [
+                                {
+                                    time: {
+                                        unit: "Vote"
+                                    },
+                                    gridLines: {
+                                        display: false
+                                    },
+                                    ticks: {
+                                        maxTicksLimit: 6
+                                    }
+                                }
+                            ],
+                            yAxes: [{
+                                ticks: {
+                                    min: 0,
+                                    max
+                                },
+                                gridLines: {
+                                    display: true
+                                }
+                            }]
+                        },
+                        legend: {
+                            display: true
+                        }
+                    }
+                });
+            }
+        },
+        head() {
+            return {
+                script:[
+                    {src:"/js/chart.js"}
+                ]
             }
         }
 	}

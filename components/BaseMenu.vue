@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<div class="menu-cel" @click="openMenu()">
-			<img src="@/assets/logo.png" alt="">
+			<img src="@/assets/logo.png" alt="La Voz de OIENIV - Radio Cristiana en Venezuela">
 			<span class="icon-menu"></span>
 		</div>
 		<div class="sombra" :style="width < 950 ? styleSombra: 'display:none'" @click="openMenu()"></div>
@@ -26,12 +26,12 @@
 					</a>
 					<ul class="children">
 						<li>
-							<nuxt-link to="/Galeria/fotos" class="borderanim">Fotos
+							<nuxt-link to="/galeria/fotos" class="borderanim">Fotos
 								<span class="icon-dot"></span>
 							</nuxt-link>
 						</li>
 						<li>
-							<nuxt-link to="/Galeria/videos" class="borderanim">Videos
+							<nuxt-link to="/galeria/videos" class="borderanim">Videos
 								<span class="icon-dot "></span>
 							</nuxt-link>
 						</li>

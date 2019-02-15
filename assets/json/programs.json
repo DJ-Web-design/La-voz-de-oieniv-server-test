@@ -2,11 +2,11 @@
 	"programas":[
 		{
 			"nombre":"Tropicalisima",
-			"locutor":"Bernardo Romero",
-			"inicio":"5P.M.",
+			"locutor":"N/A",
+			"inicio":"5:30P.M.",
 			"fin":"7P.M.",
-			"dias":"Sábados",
-			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"dias":"Lunes a Viernes",
+			"descripcion":"Guarachas, Cumbias, Chachacha, Guaguanco y más de los mejores generos de la musica tropical, te la traemos en Tropicalisima.",
 			"image":"assets/images/logo.png"
 		},
 		{
@@ -15,7 +15,7 @@
 			"inicio":"7P.M.",
 			"fin":"8P.M.",
 			"dias":"Miércoles",
-			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"descripcion":"Una palabra de sabiduria y de esperanza, para ese alma que clama en el desierto: \"¡Jesús, Hijo de David, Ten misericordia de mi!\"",
 			"image":"assets/images/logo.png"
 		},		
 		{
@@ -24,7 +24,7 @@
 			"inicio":"7P.M.",
 			"fin":"8P.M.",
 			"dias":"Martes",
-			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"descripcion":"La oración es la fortaleza de un cristiano, y Dios dice en su palabra: \"Clama a mi y yo te respondere\", pon tus peticiones delante de Dios, que Él Hara",
 			"image":"assets/images/logo.png"
 		},		
 		{
@@ -33,7 +33,7 @@
 			"inicio":"10A.M.",
 			"fin":"11A.M.",
 			"dias":"Sábados",
-			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"descripcion":"Atiende a estos consejos que te ayudaran a mantenerte en armonia con tu familia, tu pareja y la sociedad. Entrelazados: Un consejo para todos.",
 			"image":"assets/images/logo.png"
 		},		
 		{
@@ -42,7 +42,7 @@
 			"inicio":"4P.M.",
 			"fin":"5P.M.",
 			"dias":"Sábados",
-			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"descripcion":"Disfruta rock, ska y lo mejor del genero urbano, con \"La Tribu\", el programa para ti",
 			"image":"assets/images/logo.png"
 		},		
 		{
@@ -51,7 +51,7 @@
 			"inicio":"8A.M.",
 			"fin":"9A.M.",
 			"dias":"Sábados",
-			"descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero possimus in facilis fugit aspernatur! Tempore, beatae. Quos unde blanditiis officia doloribus! Culpa inventore fugit odit officia eveniet exercitationem! Debitis, harum.",
+			"descripcion":"Lo mejor de nuestra musica venezolana te la traemos en Venezuela para Cristo, pero sobre todo te traemos lo mas importante: La Palabra de Dios",
 			"image":"assets/images/logo.png"
 		}
 	]
