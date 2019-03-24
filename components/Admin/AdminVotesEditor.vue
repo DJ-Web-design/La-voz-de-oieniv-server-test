@@ -15,6 +15,7 @@
 			</select>
 			<button>Cambiar</button>
 		</form>
+		<output v-html="innerHTML"></output>
 	</div>
 </template>
 <script>
@@ -27,10 +28,11 @@
 				song:"",
 				voteId:"1",
 				file:undefined,
+				innerHTML:""
 			}
 		},
 		methods:{
-			getFile(file){
+			async getFile(file){
 				const invalidFormat = 
 				file[0].type != "image/png" && 
 				file[0].type != "image/jpeg" && 
@@ -39,22 +41,24 @@
 		    	    alert("Por favor seleccione una imagen");
 		    	    document.getElementById("archi").value = ""
 		    	} else {
-		    	    this.file = file
+		    	    this.file = file[0];
+		    	    const img = await this.readFile(file[0]);
+		    	    this.innerHTML = `<img src="${img}"/>`;
 		    	}
+			},
+			readFile(file) {
+				return new Promise((resolve, reject) => {
+					const reader = new FileReader();
+					reader.readAsDataURL(file);
+					reader.onload = ({target}) => resolve(target.result);
+					reader.onerror = () => reject("Error al abrir imagen");
+				});
 			},
 			async submit(e){
 				e.preventDefault();
 				if (confirm("¿Esta seguro de su eleccion?.\nRevise que todos los datos esten correctos.")) {
-					var reader = new FileReader();
-
-					reader.readAsDataURL(this.file[0]);
-
-					let	image
-
-					reader.onload = ({target}) => {
-						image = target.result;
-					}
-
+					
+					const image = await this.readFile(this.file);
 					let voteId;
 					switch(this.voteId){
 						case "1":
@@ -70,7 +74,7 @@
 							voteId = "uno"
 							break;
 					}
-					data = {
+					const data = {
 						artista:this.artist,
 						cancion:this.song,
 						voto:`${this.song} de ${this.artist}`,

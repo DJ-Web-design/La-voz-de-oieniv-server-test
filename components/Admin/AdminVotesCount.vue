@@ -1,14 +1,20 @@
 <template>
 	<div>
 		<div id="title-count">Conteo de votos</div>
-        <template v-if="!loading">
-            <canvas id="canvas">
-                Tu navegador no soporta Canvas
-            </canvas>
-        </template>
-        <template v-else>
-            <span>Loading...</span>
-        </template>
+            <div>
+                <div class="voto-container">
+                    <span class="cuenta-voto">{{vote1.votesCount}}</span>
+                    <span class="nombre-voto">{{vote1.voto}}</span>
+                </div>
+                <div class="voto-container">
+                    <span class="cuenta-voto">{{vote2.votesCount}}</span>
+                    <span class="nombre-voto">{{vote2.voto}}</span>
+                </div>
+                <div class="voto-container">
+                    <span class="cuenta-voto">{{vote3.votesCount}}</span>
+                    <span class="nombre-voto">{{vote3.voto}}</span>
+                </div>
+            </div>
         <VotesEditor/>
 	</div>
 </template>
@@ -21,86 +27,29 @@
         },
 		data(){
 			return {
-                loading:true
+                loading:true,
+                vote1:{},
+                vote2:{},
+                vote3:{}
 			}
 		},
-        async mounted(){
-            
-            try {
-                await votesDatabase.once("value", snap=>{
-                    this.renderChart(snap.val());
-                    this.loading = false;
-                });
-                votesDatabase.on("child_changed", snap=>{
-                    this.renderChart(snap.val());
-                });
-            } catch(err) {
-                alert("Error al obtener los datos.\nPor favor recargue la pagina.");
-            }
+        mounted(){
+            votesDatabase.on("value", snap=>{
+                this.renderVotes(snap.val());
+                this.loading = false;
+            });
         },
         destroyed() {
-            votesDatabase.off("child_changed");
+            votesDatabase.off("value");
         },
         methods: {
-            renderChart(vote) {
-                let max = 0;
-                let votes = [vote.uno, vote.dos, vote.tres];
-                votes.forEach(vote=> {
-                    while(vote.votesCount > max) {
-                        max + 10;
-                    }
-                });
-                let ctx = document.getElementById("canvas").getContext("2d");
-                let chart = new Chart(ctx, {
-                    type:"bar",
-                    data:{
-                        labels: votes.map(v=>v.voto),
-                        datasets: [{
-                            label:"Número de Votos",
-                            backgroundColor: "rgba(151,249,190,0.5)",
-                            borderColor: "rgba(255,255,255,1)",
-                            data: votes.map(v=>v.votesCount),
-                            scaleFontSize : 13,
-                            scaleFontColor : "#ffa45e"
-                        }]
-                    },
-                    options:{
-                        scales: {
-                            xAxes: [
-                                {
-                                    time: {
-                                        unit: "Vote"
-                                    },
-                                    gridLines: {
-                                        display: false
-                                    },
-                                    ticks: {
-                                        maxTicksLimit: 6
-                                    }
-                                }
-                            ],
-                            yAxes: [{
-                                ticks: {
-                                    min: 0,
-                                    max
-                                },
-                                gridLines: {
-                                    display: true
-                                }
-                            }]
-                        },
-                        legend: {
-                            display: true
-                        }
-                    }
-                });
-            }
-        },
-        head() {
-            return {
-                script:[
-                    {src:"/js/chart.js"}
-                ]
+            renderVotes(voto) {
+                const votes =  {
+                    vote1:voto.uno,
+                    vote2:voto.dos,
+                    vote3:voto.tres
+                };
+                Object.entries(votes).forEach(data => this[data[0]] = data[1]);
             }
         }
 	}
@@ -115,14 +64,18 @@
     color: gray;
     margin: 25px 0 50px 0;
 }
+.voto-container {
+    display: inline-block;
+    width: 30%;
+}
 .nombre-voto{
-    margin: 0 6.5%;
-    float: left;
+    display: block;
+    margin: 0 20%;
     border: 2px solid rgba(75,127,232,.3);
     box-shadow: 1px 1px 4px gray;
     border-radius: 3px;
     text-align: center;
-    width: 20%;
+    width: 60%;
     height: 50px;
     background: #e7e5e5
     
@@ -132,14 +85,14 @@
     margin-top:  14px;
 }
 .cuenta-voto{
+    display: block;
     text-align: center;
-    margin: 0 11.5%;
+    margin: 0 35%;
     font-size: 25px;
-    float: left;
-    border: 2px solid rgba(75,127,232,.3);
-    box-shadow: 1px 1px 4px gray;
-    border-radius: 3px;    
-    width: 10%;
+    border: 2px solid rgba(75, 127, 232, .3);
+    box-shadow: 1px 1px 4px grey;
+    border-radius: 3px;
+    width: 30%;
     height: 80px;
 }
 .cuenta-voto > span{
@@ -189,7 +142,7 @@
     transform: rotate(360)
   }
 }
-        .cajaexterna {
+.cajaexterna {
     background-color: rgba(0, 0, 0, 0.5);
     bottom: 0;
     left: 0;
