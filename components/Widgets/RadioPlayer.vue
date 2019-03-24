@@ -2,9 +2,8 @@
 	<div id="main" :style="viewPlayer ? {bottom: 0} : {bottom:'-170px'}" style="transition: ease .6s">
 		<div id="player-container">
 			<span class="icon-menu" @click="viewPlayer = !viewPlayer"></span>
-			<div id="status" :style="lived ? {background:'green'} : {background:'red'}">
-				<span v-if="lived">En Vivo</span>
-				<span v-else>Fuera de Aire</span>
+			<div id="status" :style="{background:status.color}">
+				<span>{{status.text}}</span>
 			</div>
 			<div>
 			<input
@@ -77,29 +76,45 @@
 				playing:false,
 				volume:1,
 				muted:false,
-				lived:false,
+				status:{
+					text:"Cargando",
+					color:"#47475a"
+				},
 				viewVolume:false,
 				interval:undefined,
 				viewPlayer: false
 			}
 		},
 		mounted() {
-			let audio = new Audio("//78.129.187.57:31885/stream.mp3");
-			audio.autoplay = "on";
-
-			document.getElementById("audio-container").appendChild(audio);
-
-			this.player = audio;
-
-			setTimeout(() => {
-				if (this.player.readyState === 0) {
-					this.lived = false;
-				} else {
-					this.lived = true;
-				}
-			}, 10000);
+			this.initPlayer();
 		},
 		methods: {
+			initPlayer() {
+				const audio = new Audio("//78.129.187.57:31885/stream.mp3");
+				const audioContainer = document.getElementById("audio-container");
+				this.player = audio;
+
+				audioContainer.appendChild(audio);
+
+				const resetPlayer = () => {
+					audioContainer.removeChild(audio);
+					this.status = {
+						text:"Fuera del Aire",
+						color:"red"
+					}
+					this.initPlayer();
+				};
+				audio.onplay = () => {
+					this.playing = true;
+					this.status = {
+						text:"En Vivo",
+						color:"green"
+					}
+				};
+				audio.oncanplay = () => this.play();
+				audio.onerror = () => resetPlayer();
+				audio.onended = () => resetPlayer();
+			},
 			mute() {
 				this.muted = true;
 				this.player.muted = true;
@@ -118,6 +133,10 @@
 					this.playing = true;
 				} catch(err) {
 					alert("Error al cargar Streaming");
+					this.status = {
+						text: "Error",
+						color:"red"
+					}
 				}
 			},
 			pause() {
