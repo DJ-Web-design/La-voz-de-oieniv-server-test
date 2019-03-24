@@ -68,13 +68,13 @@
         },
 		data(){ 
 			return {
-    		    bloqueo: false,
+    		    bloqueo: true,
     		    page: 1,
     		}
 		},
         mounted(){
             if (localStorage.getItem("remember") || sessionStorage.getItem("remember")) {
-                this.bloqueo = false
+                this.bloqueo = false;
             }
         }
 	}
