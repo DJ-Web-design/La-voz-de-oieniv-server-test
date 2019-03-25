@@ -60,7 +60,7 @@
                 					Gerente General: Agustín Sanchez
                 				</li>
                 				<li style="list-style:none">
-                					Tecnico y Desarrollador: David González
+                					Tecnico y Desarrollador: <a href=\"https://www.facebook.com/davidsdevel\" target="_blank">David González</a>
                 				</li>
 
                 		</ul>`,

@@ -90,7 +90,7 @@
 		},
 		methods: {
 			initPlayer() {
-				const audio = new Audio("//78.129.187.57:31885/stream.mp3");
+				const audio = new Audio("http://78.129.187.57:31885/stream.mp3");
 				const audioContainer = document.getElementById("audio-container");
 				this.player = audio;
 
@@ -99,7 +99,7 @@
 				const resetPlayer = () => {
 					audioContainer.removeChild(audio);
 					this.status = {
-						text:"Fuera del Aire",
+						text:"Sin Conexion",
 						color:"red"
 					}
 					this.initPlayer();
@@ -111,7 +111,8 @@
 						color:"green"
 					}
 				};
-				audio.oncanplay = () => this.play();
+				
+				audio.oncanplaythrough = () => this.play(resetPlayer);
 				audio.onerror = () => resetPlayer();
 				audio.onended = () => resetPlayer();
 			},
@@ -127,7 +128,7 @@
 				this.muted = false;
 				this.player.muted = false;
 			},
-			async play() {
+			async play(callback) {
 				try {
 					await this.player.play();
 					this.playing = true;
@@ -137,6 +138,7 @@
 						text: "Error",
 						color:"red"
 					}
+					callback();
 				}
 			},
 			pause() {
