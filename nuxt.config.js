@@ -9,17 +9,18 @@ module.exports = {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			
 			{ property:"og:type", content:"website" },
-			{ property:"og:image", content:"https://www.lavozdeoieniv.tk/image.jpg" },
+			{ property:"og:image", content:"https://www.lavozdeoieniv.tk/images/mage.jpg" },
 			{ property:"og:image:width", content:"851px" },
 			{ property:"og:image:height", content:"315px" },
 			{ property:"fb:app_id", content:"126968564676905" },
 			{ property:"og:image:alt", content:"Emisora Cristiana La Voz de OIENIV" },
-			{name:"twitter:card", content:"summary"},
-			{name:"twitter:site", content:"@lavozdeoieniv"},
+			{ name:"twitter:card", content:"summary" },
+			{ name:"twitter:site", content:"@lavozdeoieniv" }
 		],
 		script:[
     		{ src:"https://www.paypalobjects.com/api/checkout.js" },
-			{src:"/js/FB.js"}
+			{ src:"/js/FB.js" },
+    		{ src:"/js/paypal-button.js" }
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

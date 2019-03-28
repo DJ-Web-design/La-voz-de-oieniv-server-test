@@ -7,7 +7,7 @@
 			"fin":"7P.M.",
 			"dias":"Lunes a Viernes",
 			"descripcion":"Guarachas, Cumbias, Chachacha, Guaguanco y más de los mejores generos de la musica tropical, te la traemos en Tropicalisima.",
-			"/image":"assets/images/logo.png"
+			"image":"/assets/images/logo.png"
 		},
 		{
 			"nombre":"Voz que clama en el desierto",

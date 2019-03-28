@@ -22,7 +22,7 @@ function render() {
         			currency: 'USD',
     			},
         		description: 'Donación Para La Voz de OIENIV.',
-			}],
+			}]
 		});
 	},
     // Execute the payment

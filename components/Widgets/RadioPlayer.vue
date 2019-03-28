@@ -61,6 +61,7 @@
 				 v-else
 				 src="@/assets/pause2.svg"
 				>
+				<img src="@/assets/reload.svg" @click="resetPlayer('load')" class="play-pause" id="reload">
 			</div>
 		</div>
 		<div id="audio-container"></div>
@@ -89,6 +90,26 @@
 			this.initPlayer();
 		},
 		methods: {
+			resetPlayer(type) {
+				const audioContainer = document.getElementById("audio-container");
+
+				var status = {
+					text: "Sin Conexion",
+					color:"red"
+				};
+
+				if (type === "load")
+					status = {
+						text: "Cargando",
+						color:"#47475a"
+					}
+				audioContainer.removeChild(this.player);
+				this.status = {
+					text:"Sin Conexion",
+					color:"red"
+				}
+				this.initPlayer();
+			},
 			initPlayer() {
 				const audio = new Audio("http://78.129.187.57:31885/stream.mp3");
 				const audioContainer = document.getElementById("audio-container");
@@ -96,14 +117,7 @@
 
 				audioContainer.appendChild(audio);
 
-				const resetPlayer = () => {
-					audioContainer.removeChild(audio);
-					this.status = {
-						text:"Sin Conexion",
-						color:"red"
-					}
-					this.initPlayer();
-				};
+
 				audio.onplay = () => {
 					this.playing = true;
 					this.status = {
@@ -112,9 +126,9 @@
 					}
 				};
 				
-				audio.oncanplaythrough = () => this.play(resetPlayer);
-				audio.onerror = () => resetPlayer();
-				audio.onended = () => resetPlayer();
+				audio.oncanplaythrough = () => this.play();
+				audio.onerror = () => this.resetPlayer("error");
+				audio.onended = () => this.resetPlayer("load");
 			},
 			mute() {
 				this.muted = true;
@@ -128,7 +142,7 @@
 				this.muted = false;
 				this.player.muted = false;
 			},
-			async play(callback) {
+			async play() {
 				try {
 					await this.player.play();
 					this.playing = true;
@@ -138,7 +152,7 @@
 						text: "Error",
 						color:"red"
 					}
-					callback();
+					setTimeout(() => this.play(), 10000);
 				}
 			},
 			pause() {
@@ -154,6 +168,9 @@
 	}
 </script>
 <style scoped>
+	#reload {
+		left: 35px;
+	}
 	#main {
 		position: fixed;
 		bottom: 0;

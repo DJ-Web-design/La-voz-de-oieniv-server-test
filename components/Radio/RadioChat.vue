@@ -40,42 +40,34 @@
                 </div>
             </template>
             <template v-else>
-                <form @submit="sendMessage">
-                    <div class="input-group">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="msj">
-                            <input 
-                             class="mdl-textfield__input" 
-                             type="text" 
-                             id="Mensaje"
-                             placeholder="Ingresa tu mensaje" 
-                             value="" 
-                             name="Mensaje" 
-                             v-model="chat.message"
-                            />
-                        </div>
-                        <ButtonFlat 
-                        class="mdl-button mdl-js-button mdl-color--amber-800" 
-                        id="btnEnviar" 
-                        type="submit" 
-                        style="height: 36px;"
-                        text="Enviar"
-                        />
+                <div class="input-group">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="msj">
+                        <textarea
+                         @keydown="setHeight"
+                         class="mdl-textfield__input" 
+                         type="text" 
+                         id="Mensaje"
+                         placeholder="Ingresa tu mensaje" 
+                         value="" 
+                         name="Mensaje" 
+                         v-model="chat.message"
+                         @keyup="sendMessageWithEnter"
+                        ></textarea>
+                        <img src="@/assets/send.svg" id="send" @click="sendMessage">
                     </div>
-                </form>
+                </div>
             </template>
         </div>
     </div>
 </template>
 <script>
-    import ButtonFlat from "@/components/Widgets/ButtonFlat"
     import RadioChatTemplate from "@/components/Radio/RadioChatTemplate";
-    import RadioModal from "@/components/Radio/RadioModal"
-    import { chatDatabase } from "@/plugins/firebase.js"
+    import RadioModal from "@/components/Radio/RadioModal";
+    import { chatDatabase } from "@/plugins/firebase.js";
     
 	export default {
         components:{
             RadioChatTemplate,
-            ButtonFlat,
             RadioModal
         },
 		data(){
@@ -93,21 +85,23 @@
                     pic: "",
                 },
                 chatMessages: [],
+                messageBarHeight:"16px"
             }
 		},
         mounted(){
+            const that = this;
             if (localStorage.getItem("Nombre") && localStorage.getItem("pic")){
                 this.show = false;
                 this.chat.user = localStorage.getItem("Nombre");
                 this.chat.pic = localStorage.getItem("pic");
             }
-            var chat = this.chatMessages;
             chatDatabase.on("value", val =>{
-                chat = [];
+                val = Object.values(val.val());
+                that.chatMessages = [];
                 val.forEach(e=>{
-                    let valor = e.val();
+                    let valor = e;
                     if ((valor.message != null) && (valor.user != null)) {
-                        chat.push(valor);
+                        that.chatMessages.push(valor);
                     }
                 })
             })
@@ -116,21 +110,44 @@
             chatDatabase.off("value");
         },
 		methods:{
+            setHeight({target}) {
+                target.style.height = "16px";
+                const computed = window.getComputedStyle(target);
+
+                var height = parseInt(computed.getPropertyValue('border-top-width'), 10)
+                    + parseInt(computed.getPropertyValue('padding-top'), 10)
+                    + target.scrollHeight
+                    + parseInt(computed.getPropertyValue('padding-bottom'), 10)
+                    + parseInt(computed.getPropertyValue('border-bottom-width'), 10);
+
+                target.style.height = height - 20 + "px";
+            },
+            sendMessageWithEnter(e) {
+                this.setHeight(e);
+                e.preventDefault();
+                const {code} = e;
+
+                if (code === "Enter") {
+                    this.chat.message = "";
+                    this.sendMessage(e);
+                }
+                return false;
+            },
             sendMessage(e) {
                 e.preventDefault(); 
-                let formatofecha = new Date();
-                let d = formatofecha.getUTCDate();
-                let m = formatofecha.getMonth() + 1;
-                let y = formatofecha.getFullYear();
-                let h = formatofecha.getHours();
-                let min = formatofecha.getMinutes();
-                let Fecha = `${d}/${m}/${y} ${h}:${min < 10 ? '0'+min : min}`;
+                const formatofecha = new Date();
+                const d = formatofecha.getUTCDate();
+                const m = formatofecha.getMonth() + 1;
+                const y = formatofecha.getFullYear();
+                const h = formatofecha.getHours();
+                const min = formatofecha.getMinutes();
+                const date = `${d}/${m}/${y} ${h}:${min < 10 ? '0'+min : min}`;
                 if (this.chat.message && this.chat.user) {
                     chatDatabase.push({
                         message: this.chat.message, 
                         user: this.chat.user, 
                         pic: this.chat.pic, 
-                        date: Fecha
+                        date
                     });
                     this.chat.message = "";
                 } else {
@@ -141,7 +158,15 @@
 	}
 </script>
 <style scoped>
-
+#send {
+    height: 30px;
+    position: absolute;
+    right: 25px;
+    top: calc(50% - 15px);
+}
+#send:hover {
+    cursor: pointer;
+}
 .boton{
     background:#ff8f00;
     border-radius: 50px;
@@ -189,10 +214,29 @@
     width: 100%
 }
 #msj {
-    margin:20px auto;
+
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: 0 0 4px;
+    border-radius: 30px;
+    border: none;
+    padding: 3.6% 25px 3.6% 50px;
+    background: white;
+}
+#msj:hover {
+    cursor: text;
 }
 #Mensaje {
-    width: 95%;
+    width: 80%;
+    resize: none;
+    height: 16px;
+    padding: 5px 0;
+    border:none;
+}
+#Mensaje:focus {
+    outline: none;
 }
 #modal-shadow {
     margin-top: 0;
@@ -233,40 +277,32 @@
     width: 95%;
     margin-left: 2.5%;
     height: 600px;
-    box-shadow: black 1px 1px 6px
+    /*box-shadow: black 1px 1px 6px;*/
 }
-
-#btnEnviar {
-    position: relative;
-    width: 70%
-}
-
 .panel-cabecera {
     position: relative;
-    border-radius: 5px 5px 0 0;
+    border-radius: 20px 20px 0 0;
     width: 100%;
     height: 10%;
-    background: #32559C;
-    box-shadow: 0 0 5px black
+    background: #f7f7f7;
 }
 #demo-menu-lower-right {
     margin: 2.5px 5px;
     border:none;
     border-radius: 50%;
-    background: skyblue;
+    background: white;
     float: right;
     width: 45px;
     height: 45px;
     cursor: pointer;
 }
 #demo-menu-lower-right:hover {
-    box-shadow: 1px 1px 2px;
+    box-shadow: 0px 0px 2px #f7f7f7;
 }
 
 button#demo-menu-lower-right span {
     font-size: 30px;
-    font-weight: 200;
-    color:orange;
+    color:#4682b4;
 }
 ul.dropdown-menu {
     position: absolute;
@@ -290,22 +326,20 @@ ul.dropdown-menu li:hover{
 .panel-cuerpo {
     overflow-y: scroll;
     width: 99.5%;
-    height: 70%;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray
+    height: 80%;
+    background: white;
 }
 
 .mdl-textfield {
     width: 59%;
-    z-index: 2
+    z-index: 2;
 }
-
 .panel-pie {
     display: inline-block;
-    width: 99.6%;
-    height: 19.7%;
-    background: #beb3b3;
-    border: 1px solid gray
+    width: 100%;
+    height: 9.7%;
+    background: white;
+    position: relative;
 }
 
 .chat {
@@ -332,29 +366,6 @@ ul.dropdown-menu li:hover{
     margin: 0;
     color: #777
 }
-
-@media screen and (min-width:480px){
-    #msj {
-        width: 40%;
-    }
-    #btnEnviar{
-        width: 40%;
-        left: 30%;
-    }
-}
-@media screen and (min-width:767px){
-    .input-group #msj,
-    .input-group button {
-        display: inline-block;
-    }
-    .input-group #msj{
-        margin: 45px 10%;
-    }
-    .input-group #btnEnviar {
-        width: 30%;
-        left: 0%;
-    }
-}
 @media screen and (min-width:950px){
     .online,
     .cuerpo {
@@ -365,40 +376,28 @@ ul.dropdown-menu li:hover{
     .panel-cuerpo {
         overflow-y: scroll;
         width: 99.7%;
-        height: 70%;
-        border-left: 1px solid gray;
-        border-right: 1px solid gray
+        height: 77%;
     }
 
     .cuerpo {
         border-radius: 8px 8px 0 0;
         width: 37.5%;
         height: 500px;
-        margin-left: 0
+        margin-left: 0;
     }
     .panel-cabecera {
         border-radius: 5px 5px 0 0;
         width: 100%;
         height: 10%
     }
-        .mdl-textfield {
+    .mdl-textfield {
         width: 59%;
         z-index: 2
     }
     .panel-pie {
         display: inline-block;
         width: 99.7%;
-        height: 19.7%;
-        background: #beb3b3;
-        border: 1px solid gray
-    }
-    #btnEnviar {
-        width: 100px;
-        margin: 0;
-        left: 0
-    }
-    .input-group #msj {
-        margin: 38px 10%;
+        height: 12.7%;
     }
     .chat {
         list-style: none;

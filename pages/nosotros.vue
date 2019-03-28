@@ -38,10 +38,7 @@
 					{ property:"og:description", content:description},
 					//twitter cards
 					{name:"twitter:description", content:description}
-				],
-				script: [
-    				{ src:"/js/paypal-button.js"}
-    			]
+				]
 			}
 		},
 		components: {

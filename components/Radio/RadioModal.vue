@@ -53,14 +53,19 @@
     </div>
 </template>
 <script>
+    import colors from "@/assets/json/colors.json";
+
 	export default {
 		data(){
 			return this.$parent._data
 		},
 		methods:{
 			ingresaNombre() {
-                this.chat.pic = "http://placehold.it/50/55C1E7/fff&text=U";
+                const colorIndex = Math.round(Math.random() * colors.length);
+                const letter = this.chat.user[0].toUpperCase();
+
                 if (this.chat.user) {
+                    this.chat.pic = `http://placehold.it/50/${colors[colorIndex]}/fff&text=${letter}`
                     this.show = false;
                     this.showModal = false;
                     localStorage.setItem("Nombre", this.chat.user);

@@ -30,7 +30,7 @@ function initializeFB() {
 			FB.init({
 				appId      : '126968564676905',
 				xfbml      : true,
-				version    : 'v3.0'
+				version    : 'v2.3'
 			});
 			FB.AppEvents.logPageView();
 			FB.Event.subscribe('xfbml.render', finished_rendering);
