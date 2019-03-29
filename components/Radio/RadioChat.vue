@@ -128,7 +128,6 @@
                 const {code} = e;
 
                 if (code === "Enter") {
-                    this.chat.message = "";
                     this.sendMessage(e);
                 }
                 return false;
@@ -150,6 +149,7 @@
                         date
                     });
                     this.chat.message = "";
+                    documents.getElementById("Mensaje").style.width = "16px";
                 } else {
                     alert("El Mensaje No Puede Estar Vacio.");
                 }
@@ -258,7 +258,6 @@
 }
 
 .ingresa .mdl-button {
-    margin-top: 35px;
     z-index: 2
 }
 
